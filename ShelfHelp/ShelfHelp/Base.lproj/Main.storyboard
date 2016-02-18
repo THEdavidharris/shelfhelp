@@ -31,7 +31,7 @@
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="Nhw-GS-bqr" secondAttribute="bottom" constant="8" id="kjN-J4-NsD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Groceries" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Groceries" image="groceryListIcon" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -95,7 +95,7 @@
                             <constraint firstItem="Q0Q-kM-gVg" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="s37-Q5-ZFg"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Meals" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Meals" image="mealListIcon" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,7 +123,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="groceryListIcon" width="25" height="25"/>
+        <image name="mealListIcon" width="25" height="25"/>
     </resources>
 </document>
