@@ -1,0 +1,6 @@
+framework module Pods_ShelfHelp {
+  umbrella header "Pods-ShelfHelp-umbrella.h"
+
+  export *
+  module * { export * }
+}

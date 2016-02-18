@@ -8,15 +8,17 @@
 
 import Foundation
 import AlamofireObjectMapper
+import ObjectMapper
 
-class RecipeResponseObject : Mappable {
+
+class RecipeResponseObject: Mappable {
     
     var query: String?
     var from: Int?
     var to: Int?
     var moreResultsAvailable: Bool?
-    var totalCount = Int?
-    var hits = [Recipe]?
+    var totalCount: Int?
+    var hits: [Recipe]?
     
     required init?(_ map: Map){
         mapping(map)

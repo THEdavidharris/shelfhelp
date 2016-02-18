@@ -10,6 +10,7 @@ import Foundation
 import ObjectMapper
 
 
+
 class Ingredient: Mappable {
     var uri: String?
     var quantity: Double?
