@@ -37,10 +37,10 @@
             </objects>
             <point key="canvasLocation" x="740" y="-368"/>
         </scene>
-        <!--View Controller-->
+        <!--Recipe Search View Controller-->
         <scene sceneID="iMH-KI-pv8">
             <objects>
-                <viewController id="KEn-SY-Ifb" sceneMemberID="viewController">
+                <viewController id="KEn-SY-Ifb" customClass="RecipeSearchViewController" customModule="ShelfHelp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3ux-PC-m7y"/>
                         <viewControllerLayoutGuide type="bottom" id="dcV-A3-sA3"/>
@@ -62,6 +62,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="kg0-5t-yZM"/>
+                    <connections>
+                        <outlet property="RecipeSearch" destination="BJK-9n-2uq" id="aQn-ct-Ll1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1M-kX-5d6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

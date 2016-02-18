@@ -14,6 +14,7 @@
 		FF4237BC1C7545A60092E949 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4237BB1C7545A60092E949 /* Assets.xcassets */; };
 		FF4237BF1C7545A60092E949 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF4237BD1C7545A60092E949 /* LaunchScreen.storyboard */; };
 		FF4237CA1C7545A60092E949 /* ShelfHelpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4237C91C7545A60092E949 /* ShelfHelpTests.swift */; };
+		FFE45D8D1C7554D200F7DB5F /* RecipeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE45D8C1C7554D100F7DB5F /* RecipeSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		FF4237C51C7545A60092E949 /* ShelfHelpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShelfHelpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF4237C91C7545A60092E949 /* ShelfHelpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfHelpTests.swift; sourceTree = "<group>"; };
 		FF4237CB1C7545A60092E949 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFE45D8C1C7554D100F7DB5F /* RecipeSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				FF4237BB1C7545A60092E949 /* Assets.xcassets */,
 				FF4237BD1C7545A60092E949 /* LaunchScreen.storyboard */,
 				FF4237C01C7545A60092E949 /* Info.plist */,
+				FFE45D8C1C7554D100F7DB5F /* RecipeSearchViewController.swift */,
 			);
 			path = ShelfHelp;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFE45D8D1C7554D200F7DB5F /* RecipeSearchViewController.swift in Sources */,
 				FF4237B71C7545A60092E949 /* SecondViewController.swift in Sources */,
 				FF4237B31C7545A60092E949 /* AppDelegate.swift in Sources */,
 				FF4237B51C7545A60092E949 /* FirstViewController.swift in Sources */,
