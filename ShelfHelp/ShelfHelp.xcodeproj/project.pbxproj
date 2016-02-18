@@ -392,6 +392,7 @@
 				FF4237D01C7545A60092E949 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF4237D11C7545A60092E949 /* Build configuration list for PBXNativeTarget "ShelfHelpTests" */ = {
 			isa = XCConfigurationList;
@@ -400,6 +401,7 @@
 				FF4237D31C7545A60092E949 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

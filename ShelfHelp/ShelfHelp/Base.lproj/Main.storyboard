@@ -48,7 +48,18 @@
                     <view key="view" contentMode="scaleToFill" id="l3M-59-eLZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="BJK-9n-2uq">
+                                <rect key="frame" x="20" y="28" width="560" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BJK-9n-2uq" firstAttribute="trailing" secondItem="l3M-59-eLZ" secondAttribute="trailingMargin" id="3se-Qa-KJB"/>
+                            <constraint firstItem="BJK-9n-2uq" firstAttribute="top" secondItem="3ux-PC-m7y" secondAttribute="bottom" constant="8" id="G2Q-BZ-CUg"/>
+                            <constraint firstItem="BJK-9n-2uq" firstAttribute="leading" secondItem="l3M-59-eLZ" secondAttribute="leadingMargin" id="dRt-un-DiD"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="kg0-5t-yZM"/>
                 </viewController>
