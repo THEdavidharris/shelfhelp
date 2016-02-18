@@ -15,6 +15,8 @@
 		FF4237BF1C7545A60092E949 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF4237BD1C7545A60092E949 /* LaunchScreen.storyboard */; };
 		FF4237CA1C7545A60092E949 /* ShelfHelpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4237C91C7545A60092E949 /* ShelfHelpTests.swift */; };
 		FFE45D8D1C7554D200F7DB5F /* RecipeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE45D8C1C7554D100F7DB5F /* RecipeSearchViewController.swift */; };
+		FFE45D8F1C755CC200F7DB5F /* GroceryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE45D8E1C755CC200F7DB5F /* GroceryTableViewCell.swift */; };
+		FFE45D931C755F6200F7DB5F /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE45D921C755F6200F7DB5F /* MealTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		FF4237C91C7545A60092E949 /* ShelfHelpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfHelpTests.swift; sourceTree = "<group>"; };
 		FF4237CB1C7545A60092E949 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFE45D8C1C7554D100F7DB5F /* RecipeSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSearchViewController.swift; sourceTree = "<group>"; };
+		FFE45D8E1C755CC200F7DB5F /* GroceryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryTableViewCell.swift; sourceTree = "<group>"; };
+		FFE45D921C755F6200F7DB5F /* MealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,8 @@
 				FF4237BD1C7545A60092E949 /* LaunchScreen.storyboard */,
 				FF4237C01C7545A60092E949 /* Info.plist */,
 				FFE45D8C1C7554D100F7DB5F /* RecipeSearchViewController.swift */,
+				FFE45D8E1C755CC200F7DB5F /* GroceryTableViewCell.swift */,
+				FFE45D921C755F6200F7DB5F /* MealTableViewCell.swift */,
 			);
 			path = ShelfHelp;
 			sourceTree = "<group>";
@@ -205,7 +211,9 @@
 			files = (
 				FFE45D8D1C7554D200F7DB5F /* RecipeSearchViewController.swift in Sources */,
 				FF4237B71C7545A60092E949 /* SecondViewController.swift in Sources */,
+				FFE45D931C755F6200F7DB5F /* MealTableViewCell.swift in Sources */,
 				FF4237B31C7545A60092E949 /* AppDelegate.swift in Sources */,
+				FFE45D8F1C755CC200F7DB5F /* GroceryTableViewCell.swift in Sources */,
 				FF4237B51C7545A60092E949 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
