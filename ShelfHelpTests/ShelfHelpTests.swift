@@ -33,4 +33,14 @@ class ShelfHelpTests: XCTestCase {
         }
     }
     
+    func testRecipeFetcher(){
+        let recipeFetcher = RecipeFetcher()
+        let query = "chicken"
+        RecipeFetcher.getRecipes(query) { responseObject, error in
+            print("responseObject = \(responseObject); error = \(error)")
+            return
+        }
+        
+    }
+    
 }

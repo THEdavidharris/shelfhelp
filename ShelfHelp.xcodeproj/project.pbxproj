@@ -15,6 +15,7 @@
 		2C3DC6DE1C764B74007C185F /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3DC6DD1C764B74007C185F /* Recipe.swift */; };
 		2C3DC6DF1C764B74007C185F /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3DC6DD1C764B74007C185F /* Recipe.swift */; };
 		2C3DC6E11C764E6A007C185F /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3DC6E01C764E6A007C185F /* Ingredient.swift */; };
+		2C6CDFE01C7784DB00AE8915 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3DC6E01C764E6A007C185F /* Ingredient.swift */; };
 		FF4237B31C7545A60092E949 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4237B21C7545A60092E949 /* AppDelegate.swift */; };
 		FF4237B51C7545A60092E949 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4237B41C7545A60092E949 /* FirstViewController.swift */; };
 		FF4237B71C7545A60092E949 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4237B61C7545A60092E949 /* SecondViewController.swift */; };
@@ -317,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C6CDFE01C7784DB00AE8915 /* Ingredient.swift in Sources */,
 				2C3DC6DF1C764B74007C185F /* Recipe.swift in Sources */,
 				FF4237CA1C7545A60092E949 /* ShelfHelpTests.swift in Sources */,
 				2C3DC6DC1C7648E1007C185F /* RecipeResponseObject.swift in Sources */,

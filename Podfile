@@ -3,6 +3,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '9.0'
 # Uncomment this line if you're using Swift
 use_frameworks!
+xcodeproj 'ShelfHelp.xcodeproj'
 
 target 'ShelfHelp' do
     pod 'AlamofireObjectMapper', '~> 2.1'
