@@ -21,7 +21,7 @@ class RecipeResponseObject: Mappable {
     var hits: [Recipe]?
     
     required init?(_ map: Map){
-        mapping(map)
+        //mapping(map)
     }
     
     func mapping(map: Map){

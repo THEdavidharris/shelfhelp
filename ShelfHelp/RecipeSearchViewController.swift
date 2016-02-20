@@ -17,6 +17,13 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate {
         super.viewDidLoad()
         RecipeSearch.delegate = self
         // Do any additional setup after loading the view.
+        
+        //Make the API call here
+        let apiFetcher = RecipeFetcher()
+        apiFetcher.getRecipes(){ (responseObject, error) in
+            print("responseObject = \(responseObject); error = \(error)")
+            return
+        }
     }
 
     override func didReceiveMemoryWarning() {
