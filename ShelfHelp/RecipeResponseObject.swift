@@ -14,11 +14,14 @@ import ObjectMapper
 class RecipeResponseObject: Mappable {
     
     var query: String?
-    var from: Int?
-    var to: Int?
+    var from: Int!
+    var to: Int!
     var moreResultsAvailable: Bool?
     var totalCount: Int?
-    var hits: [Recipe]?
+    var tempRecipe: Recipe!
+    
+    var countRetrieved: Int!
+    var recipeArray: [Recipe]!
     
     required init?(_ map: Map){
         //mapping(map)
@@ -30,7 +33,16 @@ class RecipeResponseObject: Mappable {
         to <- map["to"]
         moreResultsAvailable <- map["more"]
         totalCount <- map["count"]
-        hits <- map["hits"]
+        
+        self.countRetrieved = self.to - self.from
+        self.recipeArray = [Recipe]()
+        for index in 0...self.countRetrieved-1{
+            tempRecipe <- map["hits.\(index).recipe"]
+            recipeArray.append(tempRecipe)
+        }
+        
+        
+        
         
     }
     

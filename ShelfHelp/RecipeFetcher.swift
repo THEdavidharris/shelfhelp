@@ -15,14 +15,14 @@ class RecipeFetcher {
     
     let api_url = "https://api.edamam.com/search"
     
-    let full_url = "https://api.edamam.com/search?q=chicken&app_id=2a0606b2&app_key=1b56a25e79ac65f480899138abdfcfcd"
+    //let full_url = "https://api.edamam.com/search?q=chicken&app_id=2a0606b2&app_key=1b56a25e79ac65f480899138abdfcfcd"
     
-    func getRecipes(completionHandler: (RecipeResponseObject?, ErrorType?) -> Void){
+    func getRecipes(query: String, completionHandler: (RecipeResponseObject?, ErrorType?) -> Void){
         
         let params = [
             "app_id": "2a0606b2",
             "app_key": "1b56a25e79ac65f480899138abdfcfcd",
-            "from": "20",
+            "from": "0",
             "q": "chicken"
         ]
         

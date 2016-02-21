@@ -11,19 +11,14 @@ import UIKit
 class RecipeSearchViewController: UIViewController, UISearchBarDelegate {
 
     // MARK: Properties
-    @IBOutlet weak var RecipeSearch: UISearchBar!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        RecipeSearch.delegate = self
+        searchBar.delegate = self
         // Do any additional setup after loading the view.
         
-        //Make the API call here
-        let apiFetcher = RecipeFetcher()
-        apiFetcher.getRecipes(){ (responseObject, error) in
-            print("responseObject = \(responseObject); error = \(error)")
-            return
-        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,11 +26,7 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: UISearchBarDelegate
     
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        RecipeSearch.resignFirstResponder()
-    }
 
     /*
     // MARK: - Navigation
@@ -46,5 +37,35 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: UISearchBarDelegate
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        if let queryText = searchBar.text {
+            self.makeCall(queryText)
+        }
+    }
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        self.searchBar.showsCancelButton = true
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+    }
+
+    
+    // MARK: API query handling
+    func makeCall(query: String){
+        //Make the API call here
+        let apiFetcher = RecipeFetcher()
+        let query = "Chicken"
+        apiFetcher.getRecipes(query){ (responseObject, error) in
+            print("responseObject = \(responseObject); error = \(error)")
+            return
+        }    }
 
 }
