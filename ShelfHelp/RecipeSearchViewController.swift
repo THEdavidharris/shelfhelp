@@ -8,14 +8,21 @@
 
 import UIKit
 
-class RecipeSearchViewController: UIViewController, UISearchBarDelegate {
+class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate {
 
     // MARK: Properties
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var recipeTable: UITableView!
+    
+    // MARK: Variables
+    var recipeResponse: RecipeResponseObject?
+    var fetchedRecipes = [Recipe]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        recipeTable.delegate = self
+        //recipeTable.dataSource = self
         // Do any additional setup after loading the view.
         
         
@@ -25,8 +32,6 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 
     /*
     // MARK: - Navigation
@@ -62,10 +67,15 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate {
     func makeCall(query: String){
         //Make the API call here
         let apiFetcher = RecipeFetcher()
-        let query = "Chicken"
         apiFetcher.getRecipes(query){ (responseObject, error) in
             print("responseObject = \(responseObject); error = \(error)")
-            return
-        }    }
+            if error == nil {
+                self.recipeResponse = responseObject
+            }
+            else{
+                // Do something to handle the error
+            }
+        }
+    }
 
 }

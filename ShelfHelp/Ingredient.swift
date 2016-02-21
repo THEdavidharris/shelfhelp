@@ -12,7 +12,7 @@ import ObjectMapper
 
 
 class Ingredient: Mappable {
-    var uri: String?
+    var text: String?
     var quantity: Double?
     var unit: String?
     var name: String?
@@ -22,7 +22,7 @@ class Ingredient: Mappable {
     }
     
     func mapping(map: Map){
-        uri <- map["uri"]
+        text <- map["text"]
         quantity <- map["quantity"]
         unit <- map["measure.label"]
         name <- map["food.label"]

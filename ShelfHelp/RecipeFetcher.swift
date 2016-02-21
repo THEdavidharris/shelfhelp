@@ -23,7 +23,7 @@ class RecipeFetcher {
             "app_id": "2a0606b2",
             "app_key": "1b56a25e79ac65f480899138abdfcfcd",
             "from": "0",
-            "q": "chicken"
+            "q": query
         ]
         
         

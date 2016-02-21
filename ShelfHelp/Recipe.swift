@@ -17,7 +17,7 @@ class Recipe: Mappable {
     var label: String?
     var imageURL: NSURL?
     var source: String?
-    var sourceURL: String?
+    var sourceURL: NSURL?
     var ingredientArray: [Ingredient]?
     
     required init?(_ map: Map){
@@ -27,9 +27,9 @@ class Recipe: Mappable {
     func mapping(map: Map){
         uri <- map["uri"]
         label <- map["label"]
-        imageURL <- map["image"]
+        imageURL <- (map["image"], URLTransform())
         source <- map["source"]
-        sourceURL <- map["source"]
+        sourceURL <- (map["url"], URLTransform())
         ingredientArray <- map["ingredients"]
     }
 }

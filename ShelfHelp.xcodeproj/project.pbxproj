@@ -16,6 +16,7 @@
 		2C3DC6DF1C764B74007C185F /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3DC6DD1C764B74007C185F /* Recipe.swift */; };
 		2C3DC6E11C764E6A007C185F /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3DC6E01C764E6A007C185F /* Ingredient.swift */; };
 		2C6CDFE01C7784DB00AE8915 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3DC6E01C764E6A007C185F /* Ingredient.swift */; };
+		2C772E2F1C7A541C004624DB /* FetchedRecipeViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C772E2E1C7A541C004624DB /* FetchedRecipeViewCellTableViewCell.swift */; };
 		FF4237B31C7545A60092E949 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4237B21C7545A60092E949 /* AppDelegate.swift */; };
 		FF4237B51C7545A60092E949 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4237B41C7545A60092E949 /* FirstViewController.swift */; };
 		FF4237B71C7545A60092E949 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4237B61C7545A60092E949 /* SecondViewController.swift */; };
@@ -43,6 +44,7 @@
 		2C3DC6DA1C7648E1007C185F /* RecipeResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeResponseObject.swift; sourceTree = "<group>"; };
 		2C3DC6DD1C764B74007C185F /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		2C3DC6E01C764E6A007C185F /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		2C772E2E1C7A541C004624DB /* FetchedRecipeViewCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedRecipeViewCellTableViewCell.swift; sourceTree = "<group>"; };
 		73B4FA4D4DA20CA82D04E74C /* Pods-ShelfHelp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShelfHelp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShelfHelp/Pods-ShelfHelp.debug.xcconfig"; sourceTree = "<group>"; };
 		A47DB37459582D6CECA7B8A9 /* Pods_ShelfHelp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShelfHelp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD595B5658537D709B260286 /* Pods-ShelfHelp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShelfHelp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShelfHelp/Pods-ShelfHelp.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				FF4237BD1C7545A60092E949 /* LaunchScreen.storyboard */,
 				FF4237C01C7545A60092E949 /* Info.plist */,
 				FFE45D8C1C7554D100F7DB5F /* RecipeSearchViewController.swift */,
+				2C772E2E1C7A541C004624DB /* FetchedRecipeViewCellTableViewCell.swift */,
 				FFE45D8E1C755CC200F7DB5F /* GroceryTableViewCell.swift */,
 				FFE45D921C755F6200F7DB5F /* MealTableViewCell.swift */,
 			);
@@ -311,6 +314,7 @@
 				FF4237B51C7545A60092E949 /* FirstViewController.swift in Sources */,
 				2C3DC6DE1C764B74007C185F /* Recipe.swift in Sources */,
 				2C37FD241C767C2700B7BAA0 /* RecipeFetcher.swift in Sources */,
+				2C772E2F1C7A541C004624DB /* FetchedRecipeViewCellTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
