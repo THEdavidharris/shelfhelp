@@ -15,8 +15,8 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
     @IBOutlet weak var recipeTable: UITableView!
     
     // MARK: Variables
-    var recipeResponse: RecipeResponseObject?
-    var fetchedRecipes = [Recipe]()
+    var recipeResponse: RecipeResponseObject!
+    var fetchedRecipes: [Recipe]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +50,7 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
         if let queryText = searchBar.text {
             self.makeCall(queryText)
         }
+        return
     }
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
@@ -71,11 +72,14 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
             print("responseObject = \(responseObject); error = \(error)")
             if error == nil {
                 self.recipeResponse = responseObject
+                self.fetchedRecipes = self.recipeResponse.recipeArray
             }
             else{
                 // Do something to handle the error
             }
+            return
         }
     }
+    
 
 }
