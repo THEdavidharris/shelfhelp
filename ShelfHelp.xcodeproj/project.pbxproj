@@ -83,6 +83,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2CDBDFE11C7ACD7300DBFF28 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2C3DC6DA1C7648E1007C185F /* RecipeResponseObject.swift */,
+				2C3DC6DD1C764B74007C185F /* Recipe.swift */,
+				2C3DC6E01C764E6A007C185F /* Ingredient.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		C2C056CB8F5489D1BAEED666 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,10 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				FF4237B21C7545A60092E949 /* AppDelegate.swift */,
-				2C3DC6DA1C7648E1007C185F /* RecipeResponseObject.swift */,
+				2CDBDFE11C7ACD7300DBFF28 /* Models */,
 				2C37FD231C767C2700B7BAA0 /* RecipeFetcher.swift */,
-				2C3DC6DD1C764B74007C185F /* Recipe.swift */,
-				2C3DC6E01C764E6A007C185F /* Ingredient.swift */,
 				FF4237B41C7545A60092E949 /* FirstViewController.swift */,
 				FF4237B61C7545A60092E949 /* SecondViewController.swift */,
 				FF4237B81C7545A60092E949 /* Main.storyboard */,
