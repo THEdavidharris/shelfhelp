@@ -25,9 +25,17 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
         recipeTable.dataSource = self
         // Do any additional setup after loading the view.
         
+        self.navigationController?.navigationBar.hidden = true
+        
         
     }
-
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.hidden = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

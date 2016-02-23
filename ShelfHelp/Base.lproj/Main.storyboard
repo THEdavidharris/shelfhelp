@@ -57,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="740" y="-368"/>
+            <point key="canvasLocation" x="760" y="-412"/>
         </scene>
         <!--Recipe Search View Controller-->
         <scene sceneID="iMH-KI-pv8">
@@ -71,11 +71,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="BJK-9n-2uq">
+                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BJK-9n-2uq">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ucy-55-eFq">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ucy-55-eFq">
                                 <rect key="frame" x="0.0" y="72" width="600" height="479"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -112,6 +112,7 @@
                                         <connections>
                                             <outlet property="recipeImage" destination="vSb-up-ANJ" id="AzU-Mg-vMx"/>
                                             <outlet property="recipeName" destination="uyc-ug-L18" id="GdH-lV-xoh"/>
+                                            <segue destination="TbD-Jt-HsY" kind="show" id="PNA-ap-xp8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -128,7 +129,7 @@
                             <constraint firstItem="BJK-9n-2uq" firstAttribute="top" secondItem="3ux-PC-m7y" secondAttribute="bottom" constant="8" id="s3b-GZ-EuU"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="kg0-5t-yZM"/>
+                    <navigationItem key="navigationItem" id="gXT-RL-XXn"/>
                     <connections>
                         <outlet property="recipeTable" destination="ucy-55-eFq" id="uDk-cY-kP0"/>
                         <outlet property="searchBar" destination="BJK-9n-2uq" id="H1H-Hb-1JY"/>
@@ -136,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1M-kX-5d6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="19" y="995"/>
+            <point key="canvasLocation" x="-25" y="1091"/>
         </scene>
         <!--Meals-->
         <scene sceneID="wg7-f3-ORb">
@@ -203,6 +204,35 @@
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
+        <!--Recipe-->
+        <scene sceneID="RYJ-1R-wIP">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QWV-Oe-CTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="TbD-Jt-HsY" customClass="RecipeViewController" customModule="ShelfHelp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LYP-hs-VTk"/>
+                        <viewControllerLayoutGuide type="bottom" id="xyk-B5-EwQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zhy-gy-yDZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCB-Zz-Zr9">
+                                <rect key="frame" x="278" y="218" width="33" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Recipe" id="pwL-cS-jN7">
+                        <barButtonItem key="backBarButtonItem" title="Custom Text" id="DXi-00-Gl5"/>
+                    </navigationItem>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1046" y="1079"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -216,12 +246,31 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="KEn-SY-Ifb" kind="relationship" relationship="viewControllers" id="sn6-qv-YWf"/>
+                        <segue destination="oVN-sv-phk" kind="relationship" relationship="viewControllers" id="sn6-qv-YWf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-464" y="-140"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EMM-kQ-esB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oVN-sv-phk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="kg0-5t-yZM"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e3z-9U-pI1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KEn-SY-Ifb" kind="relationship" relationship="rootViewController" id="Rg9-m6-TuV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y1X-UT-18o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-837" y="1091"/>
         </scene>
     </scenes>
     <resources>
