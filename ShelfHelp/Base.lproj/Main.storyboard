@@ -23,7 +23,7 @@
                                 <rect key="frame" x="20" y="20" width="560" height="523"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ysl-mo-Feb" customClass="GroceryTableViewCell" customModule="ShelfHelp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroceryItemCell" id="ysl-mo-Feb" customClass="GroceryTableViewCell" customModule="ShelfHelp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ysl-mo-Feb" id="gKe-8Q-KKc">
@@ -33,7 +33,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95f-yz-0vh">
                                                     <rect key="frame" x="8" y="11" width="544" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -95,7 +95,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyc-ug-L18">
                                                     <rect key="frame" x="111" y="8" width="481" height="73"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -112,7 +112,7 @@
                                         <connections>
                                             <outlet property="recipeImage" destination="vSb-up-ANJ" id="AzU-Mg-vMx"/>
                                             <outlet property="recipeName" destination="uyc-ug-L18" id="GdH-lV-xoh"/>
-                                            <segue destination="TbD-Jt-HsY" kind="show" id="PNA-ap-xp8"/>
+                                            <segue destination="TbD-Jt-HsY" kind="show" identifier="searchToRecipeViewSegue" id="PNA-ap-xp8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -173,7 +173,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iR-Pr-Xtl">
                                                     <rect key="frame" x="59" y="11" width="501" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -207,7 +207,6 @@
         <!--Recipe-->
         <scene sceneID="RYJ-1R-wIP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QWV-Oe-CTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="TbD-Jt-HsY" customClass="RecipeViewController" customModule="ShelfHelp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LYP-hs-VTk"/>
@@ -220,16 +219,24 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCB-Zz-Zr9">
                                 <rect key="frame" x="278" y="218" width="33" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zyq-Jt-Z1k">
+                                <rect key="frame" x="29" y="85" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Recipe" id="pwL-cS-jN7">
                         <barButtonItem key="backBarButtonItem" title="Custom Text" id="DXi-00-Gl5"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="recipeImage" destination="Zyq-Jt-Z1k" id="QSp-hb-lKk"/>
+                        <outlet property="recipeTitle" destination="iCB-Zz-Zr9" id="0te-ED-Vra"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QWV-Oe-CTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1046" y="1079"/>
         </scene>

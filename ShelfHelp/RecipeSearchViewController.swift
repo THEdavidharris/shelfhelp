@@ -41,15 +41,23 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
         // Dispose of any resources that can be recreated.
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "searchToRecipeViewSegue" {
+            if let destination = segue.destinationViewController as? RecipeViewController {
+                if let tableIndex = recipeTable.indexPathForSelectedRow?.row {
+                    destination.recipe = fetchedRecipes[tableIndex]
+                }
+            }
+        }
     }
-    */
+    
     
     // MARK: UISearchBarDelegate
     
@@ -133,6 +141,7 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
         
         requestImage(recipe.imageURL!) { (image) -> Void in
             let myImage = image
+            recipe.image = myImage
             cell.recipeImage.image = myImage
         }
         

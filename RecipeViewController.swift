@@ -9,12 +9,25 @@
 import UIKit
 
 class RecipeViewController: UIViewController {
+    
+    // MARK: Variables
+    var recipe: Recipe?
+    
+    // MARK: Attributes
+    
+    @IBOutlet weak var recipeTitle: UILabel!
+    @IBOutlet weak var recipeImage: UIImageView!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.navigationController?.navigationBar.hidden = false
+        
+        self.recipeTitle.text = recipe?.label
+        self.recipeImage.image = recipe?.image
     }
 
     override func didReceiveMemoryWarning() {

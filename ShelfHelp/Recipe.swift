@@ -19,6 +19,7 @@ class Recipe: Mappable {
     var source: String?
     var sourceURL: NSURL?
     var ingredientArray: [Ingredient]?
+    var image: UIImage?
     
     required init?(_ map: Map){
         mapping(map)
