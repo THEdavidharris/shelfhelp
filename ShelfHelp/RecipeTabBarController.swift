@@ -8,7 +8,11 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
+class RecipeTabBarController: UITabBarController {
+    
+    // MARK: Variables
+    var savedRecipes = [Recipe]()
+    var groceryList = [Ingredient]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +25,18 @@ class TabBarController: UITabBarController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: Functionality
+    
+    func updateIngredientList(ingredients: [Ingredient]){
+        
+        // For each ingredient:
+            // If it exists in the list
+                // Update the quantity
+            // If not
+                // Make a new item
+        
     }
     
 

@@ -12,6 +12,7 @@ class RecipeViewController: UIViewController {
     
     // MARK: Variables
     var recipe: Recipe?
+    var tbvc: RecipeTabBarController!
     
     // MARK: Attributes
     
@@ -26,7 +27,15 @@ class RecipeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // Connect to TabBarController
+        self.tbvc = tabBarController as! RecipeTabBarController
+        
+        
+        // Hide the navbar and tabbar
         self.navigationController?.navigationBar.hidden = false
+        self.tabBarController?.hidesBottomBarWhenPushed = true
+
         
         self.recipeTitle.text = recipe?.label
         self.recipeImage.image = recipe?.image
@@ -49,5 +58,12 @@ class RecipeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func saveMealAndIngredients(savedRecipe: Recipe){
+        tbvc.savedRecipes.append(savedRecipe)
+        
+        tbvc.updateIngredientList(savedRecipe.ingredientArray!)
+        
+    }
 
 }
