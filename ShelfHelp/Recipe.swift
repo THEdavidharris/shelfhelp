@@ -20,6 +20,7 @@ class Recipe: Mappable {
     var sourceURL: NSURL?
     var ingredientArray: [Ingredient]?
     var image: UIImage?
+    var summary: String?
     
     required init?(_ map: Map){
         mapping(map)
@@ -32,5 +33,6 @@ class Recipe: Mappable {
         source <- map["source"]
         sourceURL <- (map["url"], URLTransform())
         ingredientArray <- map["ingredients"]
+        summary <- map["summary"]
     }
 }

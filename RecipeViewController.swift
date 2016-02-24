@@ -17,6 +17,8 @@ class RecipeViewController: UIViewController {
     
     @IBOutlet weak var recipeTitle: UILabel!
     @IBOutlet weak var recipeImage: UIImageView!
+    @IBOutlet weak var recipeDescription: UILabel!
+
     
     
 
@@ -28,6 +30,8 @@ class RecipeViewController: UIViewController {
         
         self.recipeTitle.text = recipe?.label
         self.recipeImage.image = recipe?.image
+        self.recipeDescription.text = recipe?.summary
+        return
     }
 
     override func didReceiveMemoryWarning() {
