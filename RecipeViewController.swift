@@ -40,6 +40,10 @@ class RecipeViewController: UIViewController {
         self.recipeTitle.text = recipe?.label
         self.recipeImage.image = recipe?.image
         self.recipeDescription.text = recipe?.summary
+        if (self.recipeDescription.text==nil){
+            self.recipeDescription.text = "No description provided."
+        }
+        
         return
     }
 

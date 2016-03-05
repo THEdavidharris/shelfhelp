@@ -269,8 +269,10 @@
                             <constraint firstItem="xyk-B5-EwQ" firstAttribute="top" secondItem="adf-8S-5kM" secondAttribute="bottom" id="OuX-KG-Aer"/>
                             <constraint firstItem="iCB-Zz-Zr9" firstAttribute="leading" secondItem="zhy-gy-yDZ" secondAttribute="leadingMargin" constant="28" id="UE0-G2-YBt"/>
                             <constraint firstItem="VbU-ws-Y4y" firstAttribute="leading" secondItem="zhy-gy-yDZ" secondAttribute="leadingMargin" id="Vr3-U5-FDS"/>
+                            <constraint firstItem="VbU-ws-Y4y" firstAttribute="trailing" secondItem="zhy-gy-yDZ" secondAttribute="trailingMargin" id="XWo-az-qo2"/>
                             <constraint firstItem="adf-8S-5kM" firstAttribute="trailing" secondItem="zhy-gy-yDZ" secondAttribute="trailingMargin" id="bBE-e2-Ump"/>
                             <constraint firstItem="Zyq-Jt-Z1k" firstAttribute="leading" secondItem="zhy-gy-yDZ" secondAttribute="leadingMargin" id="bad-r9-sMq"/>
+                            <constraint firstItem="VbU-ws-Y4y" firstAttribute="leading" secondItem="zhy-gy-yDZ" secondAttribute="leadingMargin" id="e8l-yb-Kpo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Zyq-Jt-Z1k" secondAttribute="trailing" id="jpg-mK-Cr5"/>
                             <constraint firstItem="aRf-Cb-PLr" firstAttribute="top" secondItem="VbU-ws-Y4y" secondAttribute="bottom" constant="8" id="lw2-j0-GgE"/>
                             <constraint firstItem="iCB-Zz-Zr9" firstAttribute="trailing" secondItem="zhy-gy-yDZ" secondAttribute="trailingMargin" constant="-28" id="pF4-0l-Ymz"/>
@@ -282,6 +284,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Recipe" id="pwL-cS-jN7">
                         <barButtonItem key="backBarButtonItem" title="Custom Text" id="DXi-00-Gl5"/>
+                        <barButtonItem key="rightBarButtonItem" image="addLight" id="USE-1v-6bF"/>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="800"/>
@@ -336,6 +339,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="addLight" width="25" height="25"/>
         <image name="groceryListIcon" width="25" height="25"/>
         <image name="mealListIcon" width="25" height="25"/>
     </resources>
