@@ -136,7 +136,6 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
         
         // Fetches the appropriate recipe
         let recipe = fetchedRecipes[indexPath.row]
-        
         cell.recipeName.text = recipe.label
         
         requestImage(recipe.imageURL!) { (image) -> Void in

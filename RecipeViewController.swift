@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecipeViewController: UIViewController {
+class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: Variables
     var recipe: Recipe?
@@ -19,6 +19,7 @@ class RecipeViewController: UIViewController {
     @IBOutlet weak var recipeTitle: UILabel!
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var recipeDescription: UILabel!
+    @IBOutlet weak var ingredientTable: UITableView!
 
     
     
@@ -27,6 +28,9 @@ class RecipeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        ingredientTable.delegate = self
+        ingredientTable.dataSource = self
+        
         
         // Connect to TabBarController
         self.tbvc = tabBarController as! RecipeTabBarController
@@ -41,8 +45,11 @@ class RecipeViewController: UIViewController {
         self.recipeImage.image = recipe?.image
         self.recipeDescription.text = recipe?.summary
         if (self.recipeDescription.text==nil){
-            self.recipeDescription.text = "No description provided."
+            //self.recipeDescription.text = "No description provided."
+            self.recipeDescription.text = String((recipe?.sourceURL)!)
+            // put button with source in it, click takes you to url
         }
+
         
         return
     }
@@ -52,7 +59,36 @@ class RecipeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    // MARK: Table
+    
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        ingredientTable.rowHeight = UITableViewAutomaticDimension
+        ingredientTable.estimatedRowHeight = 160.0
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (recipe?.ingredientArray?.count)!
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cellIdentifier = "recipeIngredientCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! RecipeIngredientTableViewCell
+        let ingredient = recipe?.ingredientArray?[indexPath.row]
+        
+        cell.ingredientLabel.text = ingredient?.text
+                                                //.name
+        
+        //if ((ingredient?.quantity)! != nil && (ingredient?.quantity)! > 0.0){
+        if (false){
+            cell.ingredientQuantityLabel.text = String(format: "%.3f", (ingredient?.quantity)!)
+            cell.ingredientUnitLabel.text = ingredient?.unit
+        } else {
+            cell.ingredientQuantityLabel.text = ""
+            cell.ingredientUnitLabel.text = ""
+        }
+        return cell
+    }
     /*
     // MARK: - Navigation
 

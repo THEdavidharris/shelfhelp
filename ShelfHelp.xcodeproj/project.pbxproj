@@ -27,6 +27,7 @@
 		FF4237BC1C7545A60092E949 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4237BB1C7545A60092E949 /* Assets.xcassets */; };
 		FF4237BF1C7545A60092E949 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF4237BD1C7545A60092E949 /* LaunchScreen.storyboard */; };
 		FF4237CA1C7545A60092E949 /* ShelfHelpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4237C91C7545A60092E949 /* ShelfHelpTests.swift */; };
+		FFBB66391C8CC44500EE0E9F /* RecipeIngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB66381C8CC44500EE0E9F /* RecipeIngredientTableViewCell.swift */; };
 		FFE45D8D1C7554D200F7DB5F /* RecipeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE45D8C1C7554D100F7DB5F /* RecipeSearchViewController.swift */; };
 		FFE45D8F1C755CC200F7DB5F /* GroceryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE45D8E1C755CC200F7DB5F /* GroceryTableViewCell.swift */; };
 		FFE45D931C755F6200F7DB5F /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE45D921C755F6200F7DB5F /* MealTableViewCell.swift */; };
@@ -64,6 +65,7 @@
 		FF4237C51C7545A60092E949 /* ShelfHelpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShelfHelpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF4237C91C7545A60092E949 /* ShelfHelpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfHelpTests.swift; sourceTree = "<group>"; };
 		FF4237CB1C7545A60092E949 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFBB66381C8CC44500EE0E9F /* RecipeIngredientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeIngredientTableViewCell.swift; sourceTree = "<group>"; };
 		FFE45D8C1C7554D100F7DB5F /* RecipeSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSearchViewController.swift; sourceTree = "<group>"; };
 		FFE45D8E1C755CC200F7DB5F /* GroceryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryTableViewCell.swift; sourceTree = "<group>"; };
 		FFE45D921C755F6200F7DB5F /* MealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				FFE45D8E1C755CC200F7DB5F /* GroceryTableViewCell.swift */,
 				FFE45D921C755F6200F7DB5F /* MealTableViewCell.swift */,
 				2CE12C221C7C0BE300209052 /* RecipeViewController.swift */,
+				FFBB66381C8CC44500EE0E9F /* RecipeIngredientTableViewCell.swift */,
 			);
 			path = ShelfHelp;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			files = (
 				FFE45D8D1C7554D200F7DB5F /* RecipeSearchViewController.swift in Sources */,
 				2CAD95D41C7D592B00C28A11 /* RecipeTabBarController.swift in Sources */,
+				FFBB66391C8CC44500EE0E9F /* RecipeIngredientTableViewCell.swift in Sources */,
 				FF4237B71C7545A60092E949 /* SecondViewController.swift in Sources */,
 				2C3DC6E11C764E6A007C185F /* Ingredient.swift in Sources */,
 				FFE45D931C755F6200F7DB5F /* MealTableViewCell.swift in Sources */,
