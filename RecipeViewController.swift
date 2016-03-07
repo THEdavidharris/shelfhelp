@@ -33,9 +33,9 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         
         // Connect to TabBarController
-        
+        if (tabBarController != nil){
         self.tbvc = tabBarController as! RecipeTabBarController
-        
+        }
         
         // Hide the navbar and tabbar
         self.navigationController?.navigationBar.hidden = false

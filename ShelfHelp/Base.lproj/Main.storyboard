@@ -24,7 +24,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroceryItemCell" id="ysl-mo-Feb" customClass="GroceryTableViewCell" customModule="ShelfHelp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="560" height="44"/>
+                                        <rect key="frame" x="0.0" y="92" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ysl-mo-Feb" id="gKe-8Q-KKc">
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
@@ -75,20 +75,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Nhw-GS-bqr" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="Xpy-b8-EP5"/>
-                            <constraint firstItem="Nhw-GS-bqr" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="aWz-1J-kLo"/>
-                            <constraint firstItem="Nhw-GS-bqr" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="kKC-Oc-wdx"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="Nhw-GS-bqr" secondAttribute="bottom" constant="8" id="kjN-J4-NsD"/>
+                            <constraint firstItem="Nhw-GS-bqr" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="topMargin" constant="20" id="8Gi-w3-DMB"/>
+                            <constraint firstItem="Nhw-GS-bqr" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="NII-kx-fFp"/>
+                            <constraint firstItem="Nhw-GS-bqr" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="hS9-M9-cPO"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="Nhw-GS-bqr" secondAttribute="bottom" constant="8" id="kJg-FF-TkE"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Groceries" image="groceryListIcon" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" title="Groceries" id="NdB-ne-kNW"/>
                     <connections>
                         <outlet property="groceryTable" destination="Nhw-GS-bqr" id="FEV-gV-guw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1228" y="-484"/>
+            <point key="canvasLocation" x="2040" y="-484"/>
         </scene>
         <!--Recipe Search View Controller-->
         <scene sceneID="iMH-KI-pv8">
@@ -187,7 +187,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MealTableCell" rowHeight="90" id="uDb-s5-CwP" customClass="MealTableViewCell" customModule="ShelfHelp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="560" height="90"/>
+                                        <rect key="frame" x="0.0" y="92" width="560" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uDb-s5-CwP" id="pye-zM-FOV">
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="89"/>
@@ -224,20 +224,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Q0Q-kM-gVg" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="1QP-RB-GM9"/>
-                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="Q0Q-kM-gVg" secondAttribute="bottom" constant="8" id="3G0-Og-r1z"/>
-                            <constraint firstItem="Q0Q-kM-gVg" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="T5E-Fm-j2y"/>
-                            <constraint firstItem="Q0Q-kM-gVg" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="s37-Q5-ZFg"/>
+                            <constraint firstItem="Q0Q-kM-gVg" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="topMargin" constant="20" id="WW5-7e-qtb"/>
+                            <constraint firstItem="Q0Q-kM-gVg" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="YaK-tD-awA"/>
+                            <constraint firstItem="Q0Q-kM-gVg" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="fYI-GO-X8r"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="Q0Q-kM-gVg" secondAttribute="bottom" constant="8" id="nfA-9V-2Oh"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Meals" image="mealListIcon" id="cPa-gy-q4n"/>
+                    <navigationItem key="navigationItem" title="Meals" id="jrF-Pe-FxL"/>
                     <connections>
                         <outlet property="mealTable" destination="Q0Q-kM-gVg" id="3Vm-X3-0mM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="566" y="232"/>
+            <point key="canvasLocation" x="1378" y="232"/>
         </scene>
         <!--Recipe-->
         <scene sceneID="RYJ-1R-wIP">
@@ -359,8 +359,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="S3H-hg-dsZ" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="Iad-p2-jwA" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="oVN-sv-phk" kind="relationship" relationship="viewControllers" id="sn6-qv-YWf"/>
                     </connections>
                 </tabBarController>
@@ -386,6 +386,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y1X-UT-18o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-837" y="1091"/>
+        </scene>
+        <!--Meals-->
+        <scene sceneID="hhY-62-PQR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Iad-p2-jwA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Meals" image="mealListIcon" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JJK-gP-wck">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="278-Je-8ma"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yQc-nh-OL0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="566" y="232"/>
+        </scene>
+        <!--Groceries-->
+        <scene sceneID="291-ne-QsB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S3H-hg-dsZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Groceries" image="groceryListIcon" id="acW-dT-cKf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8eL-1u-6JM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="EGp-Fm-fvg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vX8-nP-LSu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1228" y="-484"/>
         </scene>
     </scenes>
     <resources>
