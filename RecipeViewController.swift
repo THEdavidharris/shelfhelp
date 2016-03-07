@@ -13,6 +13,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // MARK: Variables
     var recipe: Recipe?
     var tbvc: RecipeTabBarController!
+    var prevIngredient: String = ""
     
     // MARK: Attributes
     
@@ -20,6 +21,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var recipeDescription: UILabel!
     @IBOutlet weak var ingredientTable: UITableView!
+    @IBOutlet weak var addMealButton: UIBarButtonItem!
 
     
     
@@ -76,17 +78,15 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! RecipeIngredientTableViewCell
         let ingredient = recipe?.ingredientArray?[indexPath.row]
         
-        cell.ingredientLabel.text = ingredient?.text
-                                                //.name
-        
-        //if ((ingredient?.quantity)! != nil && (ingredient?.quantity)! > 0.0){
-        if (false){
-            cell.ingredientQuantityLabel.text = String(format: "%.3f", (ingredient?.quantity)!)
-            cell.ingredientUnitLabel.text = ingredient?.unit
+        if ((ingredient?.text)! != prevIngredient){
+            cell.ingredientLabel.text = ingredient?.text
         } else {
-            cell.ingredientQuantityLabel.text = ""
-            cell.ingredientUnitLabel.text = ""
+            cell.ingredientLabel.text = ""
         }
+        prevIngredient = (ingredient?.text)!
+                                                //.name
+        // if we go with just the text, try to remove duplicates by checking
+        // for exact same string in previous ingredient
         return cell
     }
     /*

@@ -251,42 +251,21 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbM-ze-0Gs">
-                                                    <rect key="frame" x="17" y="11" width="386" height="21"/>
+                                                    <rect key="frame" x="17" y="11" width="535" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Br3-2S-ru0">
-                                                    <rect key="frame" x="480" y="11" width="72" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ct-Xf-vob">
-                                                    <rect key="frame" x="411" y="11" width="61" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="IbM-ze-0Gs" firstAttribute="leading" secondItem="7zq-Uh-CUm" secondAttribute="leading" constant="17" id="51m-ND-85J"/>
-                                                <constraint firstAttribute="trailing" secondItem="Br3-2S-ru0" secondAttribute="trailing" constant="8" id="G2F-Eu-G34"/>
-                                                <constraint firstAttribute="bottom" secondItem="7Ct-Xf-vob" secondAttribute="bottom" constant="11" id="IA7-3b-M54"/>
-                                                <constraint firstAttribute="bottom" secondItem="Br3-2S-ru0" secondAttribute="bottom" constant="11" id="L1V-hA-haH"/>
-                                                <constraint firstItem="7Ct-Xf-vob" firstAttribute="top" secondItem="7zq-Uh-CUm" secondAttribute="top" constant="11" id="MAP-kH-Sm8"/>
-                                                <constraint firstItem="Br3-2S-ru0" firstAttribute="leading" secondItem="7Ct-Xf-vob" secondAttribute="trailing" constant="8" id="Mh8-MF-Pvh"/>
                                                 <constraint firstItem="IbM-ze-0Gs" firstAttribute="top" secondItem="7zq-Uh-CUm" secondAttribute="top" constant="11" id="UST-ru-eAM"/>
-                                                <constraint firstItem="Br3-2S-ru0" firstAttribute="top" secondItem="7zq-Uh-CUm" secondAttribute="top" constant="11" id="dIt-nx-N37"/>
-                                                <constraint firstAttribute="trailing" secondItem="IbM-ze-0Gs" secondAttribute="trailing" constant="157" id="lwY-QR-N5k"/>
-                                                <constraint firstItem="7Ct-Xf-vob" firstAttribute="leading" secondItem="IbM-ze-0Gs" secondAttribute="trailing" constant="8" id="sRp-jt-u3R"/>
+                                                <constraint firstAttribute="trailing" secondItem="IbM-ze-0Gs" secondAttribute="trailing" constant="8" id="lwY-QR-N5k"/>
                                                 <constraint firstAttribute="bottom" secondItem="IbM-ze-0Gs" secondAttribute="bottom" constant="11" id="tHK-Pr-DJW"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="ingredientLabel" destination="IbM-ze-0Gs" id="amO-WM-pCI"/>
-                                            <outlet property="ingredientQuantityLabel" destination="7Ct-Xf-vob" id="foq-8F-5RB"/>
-                                            <outlet property="ingredientUnitLabel" destination="Br3-2S-ru0" id="LWI-1y-OpO"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -319,6 +298,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
+                        <outlet property="addMealButton" destination="USE-1v-6bF" id="rpE-um-rnp"/>
                         <outlet property="ingredientTable" destination="adf-8S-5kM" id="U7A-UR-9sc"/>
                         <outlet property="recipeDescription" destination="VbU-ws-Y4y" id="wox-zi-miz"/>
                         <outlet property="recipeImage" destination="Zyq-Jt-Z1k" id="QSp-hb-lKk"/>

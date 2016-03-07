@@ -38,7 +38,11 @@ class RecipeResponseObject: Mappable {
         self.recipeArray = [Recipe]()
         for index in 0...self.countRetrieved-1{
             tempRecipe <- map["hits.\(index).recipe"]
-            recipeArray.append(tempRecipe)
+            if (tempRecipe != nil){
+                recipeArray.append(tempRecipe)
+            } else {
+                // display "no results found"
+            }
         }
         
         
