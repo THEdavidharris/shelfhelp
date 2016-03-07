@@ -30,16 +30,44 @@
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95f-yz-0vh">
-                                                    <rect key="frame" x="8" y="11" width="544" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95f-yz-0vh">
+                                                    <rect key="frame" x="8" y="11" width="395" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRC-3e-SFv">
+                                                    <rect key="frame" x="411" y="11" width="63" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulr-0v-K6a">
+                                                    <rect key="frame" x="482" y="11" width="70" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yRC-3e-SFv" firstAttribute="leading" secondItem="95f-yz-0vh" secondAttribute="trailing" constant="8" id="0K2-3n-qpg"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="yRC-3e-SFv" secondAttribute="bottom" constant="3" id="0ZS-Lh-WFh"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="95f-yz-0vh" secondAttribute="bottom" constant="3" id="5Ow-be-l41"/>
+                                                <constraint firstItem="ulr-0v-K6a" firstAttribute="leading" secondItem="yRC-3e-SFv" secondAttribute="trailing" constant="8" id="NcR-Ti-5cc"/>
+                                                <constraint firstItem="95f-yz-0vh" firstAttribute="top" secondItem="gKe-8Q-KKc" secondAttribute="topMargin" constant="3" id="cIb-MF-evA"/>
+                                                <constraint firstItem="yRC-3e-SFv" firstAttribute="top" secondItem="gKe-8Q-KKc" secondAttribute="topMargin" constant="3" id="cN0-Z6-pNt"/>
+                                                <constraint firstItem="ulr-0v-K6a" firstAttribute="leading" secondItem="yRC-3e-SFv" secondAttribute="trailing" constant="8" id="e8b-Yx-ZaK"/>
+                                                <constraint firstItem="ulr-0v-K6a" firstAttribute="trailing" secondItem="gKe-8Q-KKc" secondAttribute="trailingMargin" id="f0M-Y5-ipc"/>
+                                                <constraint firstItem="ulr-0v-K6a" firstAttribute="top" secondItem="gKe-8Q-KKc" secondAttribute="topMargin" constant="3" id="gZf-kO-qTY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ulr-0v-K6a" secondAttribute="bottom" constant="3" id="hsa-aT-1m5"/>
+                                                <constraint firstItem="yRC-3e-SFv" firstAttribute="leading" secondItem="95f-yz-0vh" secondAttribute="trailing" constant="8" id="mhq-Or-Rp6"/>
+                                                <constraint firstItem="95f-yz-0vh" firstAttribute="leading" secondItem="gKe-8Q-KKc" secondAttribute="leadingMargin" id="tfg-kr-akh"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="ingredientLabel" destination="95f-yz-0vh" id="yBN-b9-ebG"/>
+                                            <outlet property="quantityLabel" destination="yRC-3e-SFv" id="vxc-rA-3yX"/>
+                                            <outlet property="unitLabel" destination="ulr-0v-K6a" id="uZA-JU-JA1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -13,6 +13,8 @@ class GroceryTableViewCell: UITableViewCell {
     // MARK: Properties
     
     @IBOutlet weak var ingredientLabel: UILabel!
+    @IBOutlet weak var quantityLabel: UILabel!
+    @IBOutlet weak var unitLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

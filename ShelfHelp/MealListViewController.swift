@@ -29,6 +29,8 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewWillAppear(animated: Bool) {
+        mealList = self.tbvc.savedRecipes
+
         mealTable.reloadData()
 
     }
@@ -55,7 +57,8 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (self.tbvc.savedRecipes.count)
+        return (mealList.count)
+        // took out self.tbvc.savedRecipes.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -67,6 +70,15 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
         cell.photoImageView.image = meal.image
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete{
+            self.tbvc.savedRecipes.removeAtIndex(indexPath.row)
+            mealList.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            
+        }
     }
 
 

@@ -24,17 +24,12 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
         self.tbvc = tabBarController as! RecipeTabBarController
         
         groceryList = self.tbvc.groceryList
-        
-        print("Loading grocery list:")
-        for thingy in groceryList{
-            print(thingy.name)
-        }
+
         
         groceryTable.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
-        print("Reloading grocery list")
         groceryList = self.tbvc.groceryList
         groceryTable.reloadData()
     }
@@ -50,7 +45,8 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (self.tbvc.groceryList.count)
+        return (groceryList.count)
+        // took out self.tbvc.groceryList.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -58,8 +54,26 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! GroceryTableViewCell
         let ingredient = groceryList[indexPath.row]
         
-        cell.ingredientLabel.text = ingredient.name        
+        cell.ingredientLabel.text = ingredient.name
+        if (ingredient.unit != nil && ingredient.quantity! > 0){
+            cell.quantityLabel.text = String(format: "%.1f", ingredient.quantity!)
+            cell.unitLabel.text = ingredient.unit
+            print ("NOT NIL")
+        } else {
+            cell.quantityLabel.text = ""
+            cell.unitLabel.text = ""
+        }
+        
         return cell
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete{
+            self.tbvc.groceryList.removeAtIndex(indexPath.row)
+            groceryList.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            
+        }
     }
 
 
