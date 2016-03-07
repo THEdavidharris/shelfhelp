@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -10,7 +10,7 @@
         <!--Groceries-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="ShelfHelp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="GroceryListViewController" customModule="ShelfHelp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -54,6 +54,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Groceries" image="groceryListIcon" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="groceryTable" destination="Nhw-GS-bqr" id="FEV-gV-guw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -142,7 +145,7 @@
         <!--Meals-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="ShelfHelp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="MealListViewController" customModule="ShelfHelp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -185,6 +188,7 @@
                                         <connections>
                                             <outlet property="mealLabel" destination="0iR-Pr-Xtl" id="fqb-Xp-aSW"/>
                                             <outlet property="photoImageView" destination="ni3-0H-nOG" id="x24-Wd-Rai"/>
+                                            <segue destination="TbD-Jt-HsY" kind="show" identifier="mealListToRecipeViewSegue" id="lNN-O7-yPT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -199,6 +203,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Meals" image="mealListIcon" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="mealTable" destination="Q0Q-kM-gVg" id="3Vm-X3-0mM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -293,7 +300,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Recipe" id="pwL-cS-jN7">
                         <barButtonItem key="backBarButtonItem" title="Custom Text" id="DXi-00-Gl5"/>
-                        <barButtonItem key="rightBarButtonItem" image="addLight" id="USE-1v-6bF"/>
+                        <barButtonItem key="rightBarButtonItem" image="addLight" id="USE-1v-6bF">
+                            <connections>
+                                <action selector="addMealToList:" destination="TbD-Jt-HsY" id="Wtg-MW-P5p"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="800"/>
@@ -354,4 +365,7 @@
         <image name="groceryListIcon" width="25" height="25"/>
         <image name="mealListIcon" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="lNN-O7-yPT"/>
+    </inferredMetricsTieBreakers>
 </document>

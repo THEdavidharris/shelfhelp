@@ -147,8 +147,7 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
         
         
         
-        return cell
-        
+        return cell   
         
         
         

@@ -22,8 +22,6 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var recipeDescription: UILabel!
     @IBOutlet weak var ingredientTable: UITableView!
     @IBOutlet weak var addMealButton: UIBarButtonItem!
-
-    
     
 
     override func viewDidLoad() {
@@ -99,11 +97,26 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     */
     
+    
+    
     func saveMealAndIngredients(savedRecipe: Recipe){
+        
+        print("Saving dat good stuff")
+        
+        
         tbvc.savedRecipes.append(savedRecipe)
         
         tbvc.updateIngredientList(savedRecipe.ingredientArray!)
         
     }
+    
+    // MARK: Actions
+    
+    @IBAction func addMealToList(sender: UIBarButtonItem) {
+        
+        print("pressed the button ;)")
+        self.saveMealAndIngredients(self.recipe!)
+    }
+    
 
 }

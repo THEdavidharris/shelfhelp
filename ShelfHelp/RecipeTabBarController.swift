@@ -31,11 +31,37 @@ class RecipeTabBarController: UITabBarController {
     
     func updateIngredientList(ingredients: [Ingredient]){
         
+        print("Updating ingredient list")
+        
         // For each ingredient:
-            // If it exists in the list
-                // Update the quantity
-            // If not
-                // Make a new item
+        var found: Bool = false
+        
+        
+        for newItem in ingredients {
+            for item in groceryList {
+                // If it exists in the list
+                if item.name == newItem.name {
+                    found = true
+                    // Check that units are the same
+                    if item.unit == newItem.unit {
+                        // Update value
+                        item.quantity! += newItem.quantity!
+                    }
+                    // If units are different
+                    else {
+                        groceryList.append(newItem)
+                    }
+                    break
+                }
+                
+            }
+            
+            // Not found
+            if (!found){
+                groceryList.append(newItem)
+            }
+            found = false;
+        }
         
     }
     

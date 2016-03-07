@@ -18,11 +18,14 @@
 		2C6CDFE01C7784DB00AE8915 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3DC6E01C764E6A007C185F /* Ingredient.swift */; };
 		2C772E2F1C7A541C004624DB /* FetchedRecipeViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C772E2E1C7A541C004624DB /* FetchedRecipeViewCellTableViewCell.swift */; };
 		2CAD95D41C7D592B00C28A11 /* RecipeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD95D31C7D592B00C28A11 /* RecipeTabBarController.swift */; };
+		2CBEB1441C8D010F0092A7CC /* RecipeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD95D31C7D592B00C28A11 /* RecipeTabBarController.swift */; };
+		2CBEB1451C8D01260092A7CC /* RecipeIngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB66381C8CC44500EE0E9F /* RecipeIngredientTableViewCell.swift */; };
+		2CBEB1461C8D012A0092A7CC /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE45D921C755F6200F7DB5F /* MealTableViewCell.swift */; };
 		2CE12C231C7C0BE300209052 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE12C221C7C0BE300209052 /* RecipeViewController.swift */; };
 		2CE12C241C7C0BE300209052 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE12C221C7C0BE300209052 /* RecipeViewController.swift */; };
 		FF4237B31C7545A60092E949 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4237B21C7545A60092E949 /* AppDelegate.swift */; };
-		FF4237B51C7545A60092E949 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4237B41C7545A60092E949 /* FirstViewController.swift */; };
-		FF4237B71C7545A60092E949 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4237B61C7545A60092E949 /* SecondViewController.swift */; };
+		FF4237B51C7545A60092E949 /* GroceryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4237B41C7545A60092E949 /* GroceryListViewController.swift */; };
+		FF4237B71C7545A60092E949 /* MealListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4237B61C7545A60092E949 /* MealListViewController.swift */; };
 		FF4237BA1C7545A60092E949 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF4237B81C7545A60092E949 /* Main.storyboard */; };
 		FF4237BC1C7545A60092E949 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4237BB1C7545A60092E949 /* Assets.xcassets */; };
 		FF4237BF1C7545A60092E949 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF4237BD1C7545A60092E949 /* LaunchScreen.storyboard */; };
@@ -56,8 +59,8 @@
 		BD595B5658537D709B260286 /* Pods-ShelfHelp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShelfHelp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShelfHelp/Pods-ShelfHelp.release.xcconfig"; sourceTree = "<group>"; };
 		FF4237AF1C7545A60092E949 /* ShelfHelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShelfHelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF4237B21C7545A60092E949 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FF4237B41C7545A60092E949 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		FF4237B61C7545A60092E949 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		FF4237B41C7545A60092E949 /* GroceryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListViewController.swift; sourceTree = "<group>"; };
+		FF4237B61C7545A60092E949 /* MealListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListViewController.swift; sourceTree = "<group>"; };
 		FF4237B91C7545A60092E949 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF4237BB1C7545A60092E949 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF4237BE1C7545A60092E949 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -143,8 +146,8 @@
 				FF4237B21C7545A60092E949 /* AppDelegate.swift */,
 				2CDBDFE11C7ACD7300DBFF28 /* Models */,
 				2C37FD231C767C2700B7BAA0 /* RecipeFetcher.swift */,
-				FF4237B41C7545A60092E949 /* FirstViewController.swift */,
-				FF4237B61C7545A60092E949 /* SecondViewController.swift */,
+				FF4237B41C7545A60092E949 /* GroceryListViewController.swift */,
+				FF4237B61C7545A60092E949 /* MealListViewController.swift */,
 				FF4237B81C7545A60092E949 /* Main.storyboard */,
 				2CAD95D31C7D592B00C28A11 /* RecipeTabBarController.swift */,
 				FF4237BB1C7545A60092E949 /* Assets.xcassets */,
@@ -325,13 +328,13 @@
 				FFE45D8D1C7554D200F7DB5F /* RecipeSearchViewController.swift in Sources */,
 				2CAD95D41C7D592B00C28A11 /* RecipeTabBarController.swift in Sources */,
 				FFBB66391C8CC44500EE0E9F /* RecipeIngredientTableViewCell.swift in Sources */,
-				FF4237B71C7545A60092E949 /* SecondViewController.swift in Sources */,
+				FF4237B71C7545A60092E949 /* MealListViewController.swift in Sources */,
 				2C3DC6E11C764E6A007C185F /* Ingredient.swift in Sources */,
 				FFE45D931C755F6200F7DB5F /* MealTableViewCell.swift in Sources */,
 				2C3DC6DB1C7648E1007C185F /* RecipeResponseObject.swift in Sources */,
 				FF4237B31C7545A60092E949 /* AppDelegate.swift in Sources */,
 				FFE45D8F1C755CC200F7DB5F /* GroceryTableViewCell.swift in Sources */,
-				FF4237B51C7545A60092E949 /* FirstViewController.swift in Sources */,
+				FF4237B51C7545A60092E949 /* GroceryListViewController.swift in Sources */,
 				2CE12C231C7C0BE300209052 /* RecipeViewController.swift in Sources */,
 				2C3DC6DE1C764B74007C185F /* Recipe.swift in Sources */,
 				2C37FD241C767C2700B7BAA0 /* RecipeFetcher.swift in Sources */,
@@ -345,7 +348,10 @@
 			files = (
 				2C6CDFE01C7784DB00AE8915 /* Ingredient.swift in Sources */,
 				2C3DC6DF1C764B74007C185F /* Recipe.swift in Sources */,
+				2CBEB1451C8D01260092A7CC /* RecipeIngredientTableViewCell.swift in Sources */,
 				2CE12C241C7C0BE300209052 /* RecipeViewController.swift in Sources */,
+				2CBEB1441C8D010F0092A7CC /* RecipeTabBarController.swift in Sources */,
+				2CBEB1461C8D012A0092A7CC /* MealTableViewCell.swift in Sources */,
 				FF4237CA1C7545A60092E949 /* ShelfHelpTests.swift in Sources */,
 				2C3DC6DC1C7648E1007C185F /* RecipeResponseObject.swift in Sources */,
 				2C37FD251C767C2700B7BAA0 /* RecipeFetcher.swift in Sources */,
