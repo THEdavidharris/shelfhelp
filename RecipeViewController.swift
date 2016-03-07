@@ -44,12 +44,12 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.recipeTitle.text = recipe?.label
         self.recipeImage.image = recipe?.image
-        self.recipeDescription.text = recipe?.summary
-        if (self.recipeDescription.text==nil){
+        //self.recipeDescription.text = recipe?.summary
+        //if (self.recipeDescription.text==nil){
             //self.recipeDescription.text = "No description provided."
-            self.recipeDescription.text = String((recipe?.sourceURL)!)
+          //  self.recipeDescription.text = String((recipe?.sourceURL)!)
             // put button with source in it, click takes you to url
-        }
+        //}
 
         
         return
