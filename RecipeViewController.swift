@@ -44,12 +44,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.recipeTitle.text = recipe?.label
         self.recipeImage.image = recipe?.image
-        //self.recipeDescription.text = recipe?.summary
-        //if (self.recipeDescription.text==nil){
-            //self.recipeDescription.text = "No description provided."
-          //  self.recipeDescription.text = String((recipe?.sourceURL)!)
-            // put button with source in it, click takes you to url
-        //}
+ 
 
         
         return
@@ -113,9 +108,13 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // MARK: Actions
     
+    @IBAction func followLinkToRecipe(sender: UIButton) {
+        let openLink = NSURL(string: String((recipe?.sourceURL)!))
+        UIApplication.sharedApplication().openURL(openLink!)
+    }
+    
     @IBAction func addMealToList(sender: UIBarButtonItem) {
         
-        print("pressed the button ;)")
         self.saveMealAndIngredients(self.recipe!)
     }
     

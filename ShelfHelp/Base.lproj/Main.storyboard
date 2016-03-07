@@ -311,6 +311,9 @@
                                 <state key="normal" title="Go To Recipe">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="followLinkToRecipe:" destination="TbD-Jt-HsY" eventType="touchUpInside" id="CQY-vP-Y2z"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

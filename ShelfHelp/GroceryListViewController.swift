@@ -75,6 +75,12 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
             
         }
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("CELL TOUCHED")
+        // get ready to check stuff off on touch
+
+    }
 
 
 
