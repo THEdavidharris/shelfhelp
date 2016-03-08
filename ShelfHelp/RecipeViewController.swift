@@ -17,6 +17,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var recipeDescription: UILabel!
     @IBOutlet weak var ingredientTable: UITableView!
     @IBOutlet weak var addMealButton: UIBarButtonItem!
+    @IBOutlet weak var goToRecipeButton: UIButton!
     var tbvc: RecipeTabBarController!
     
     // MARK: Variables
@@ -46,8 +47,18 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.recipeTitle.text = recipe?.label
         self.recipeImage.image = recipe?.image
- 
+        
+        
+        if let recipeSource = self.recipe?.source{
+            let sourceString = "View recipe at \(recipeSource)"
+            
+            self.goToRecipeButton.setTitle(sourceString, forState: .Normal)
+        }
+        
+        
+        
         return
+
     }
 
     override func didReceiveMemoryWarning() {
