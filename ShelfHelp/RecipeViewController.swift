@@ -66,17 +66,19 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (recipe?.ingredientArray?.count)!
     }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "recipeIngredientCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! RecipeIngredientTableViewCell
-        let ingredient = recipe?.ingredientArray?[indexPath.row]
         
-        if ((ingredient?.text)! != prevIngredient){
-            cell.ingredientLabel.text = ingredient?.text
-        } else {
-            cell.ingredientLabel.text = ""
-        }
-        prevIngredient = (ingredient?.text)!
+//        let ingredient = recipe?.ingredientArray?[indexPath.row]
+//        
+//        if ((ingredient?.text)! != prevIngredient){
+//            cell.ingredientLabel.text = ingredient?.text
+//        } else {
+//            cell.ingredientLabel.text = ""
+//        }
+//        prevIngredient = (ingredient?.text)!
                                                 //.name
         // if we go with just the text, try to remove duplicates by checking
         // for exact same string in previous ingredient
@@ -86,7 +88,6 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // MARK: Helper Functions
     
     func saveMealAndIngredients(savedRecipe: Recipe){
-        
         
         tbvc.savedRecipes.append(savedRecipe)
         tbvc.updateIngredientList(savedRecipe.ingredientArray!)
@@ -103,6 +104,6 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func addMealToList(sender: UIBarButtonItem) {
         
         self.saveMealAndIngredients(self.recipe!)
-    }    
+    }
 
 }

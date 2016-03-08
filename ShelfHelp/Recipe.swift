@@ -18,7 +18,7 @@ class Recipe: Mappable {
     var imageURL: NSURL?
     var source: String?
     var sourceURL: NSURL?
-    var ingredientArray: [Ingredient]?
+    var ingredientArray: Set<Ingredient>?
     var image: UIImage?
     var summary: String?
     

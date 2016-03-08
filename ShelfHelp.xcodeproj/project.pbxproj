@@ -21,6 +21,7 @@
 		2CBEB1441C8D010F0092A7CC /* RecipeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD95D31C7D592B00C28A11 /* RecipeTabBarController.swift */; };
 		2CBEB1451C8D01260092A7CC /* RecipeIngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB66381C8CC44500EE0E9F /* RecipeIngredientTableViewCell.swift */; };
 		2CBEB1461C8D012A0092A7CC /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE45D921C755F6200F7DB5F /* MealTableViewCell.swift */; };
+		2CCFC06A1C8E779B0098964E /* MealListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4237B61C7545A60092E949 /* MealListViewController.swift */; };
 		2CE12C231C7C0BE300209052 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE12C221C7C0BE300209052 /* RecipeViewController.swift */; };
 		2CE12C241C7C0BE300209052 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE12C221C7C0BE300209052 /* RecipeViewController.swift */; };
 		FF4237B31C7545A60092E949 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4237B21C7545A60092E949 /* AppDelegate.swift */; };
@@ -347,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C6CDFE01C7784DB00AE8915 /* Ingredient.swift in Sources */,
+				2CCFC06A1C8E779B0098964E /* MealListViewController.swift in Sources */,
 				2C3DC6DF1C764B74007C185F /* Recipe.swift in Sources */,
 				2CBEB1451C8D01260092A7CC /* RecipeIngredientTableViewCell.swift in Sources */,
 				2CE12C241C7C0BE300209052 /* RecipeViewController.swift in Sources */,

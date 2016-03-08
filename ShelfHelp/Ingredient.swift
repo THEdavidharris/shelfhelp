@@ -11,11 +11,15 @@ import ObjectMapper
 
 
 
-class Ingredient: Mappable {
+class Ingredient: Mappable, Hashable {
     var text: String?
     var quantity: Double?
     var unit: String?
     var name: String?
+    
+    var hashValue: Int {
+        return self.text!.hashValue
+    }
     
     required init?(_ map: Map){
         mapping(map)
@@ -27,4 +31,9 @@ class Ingredient: Mappable {
         unit <- map["measure.label"]
         name <- map["food.label"]
     }
+
+}
+
+func ==(lhs: Ingredient, rhs: Ingredient) -> Bool {
+    return lhs.text == rhs.text
 }
