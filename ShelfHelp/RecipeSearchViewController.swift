@@ -11,30 +11,33 @@ import UIKit
 class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
 
     // MARK: Properties
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var recipeTable: UITableView!
     
     // MARK: Variables
+    
     var recipeResponse: RecipeResponseObject!
     var fetchedRecipes = [Recipe]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        searchBar.delegate = self
-        recipeTable.delegate = self
-        recipeTable.dataSource = self
-        // Do any additional setup after loading the view.
-        
-        self.navigationController?.navigationBar.hidden = true
-        
-        
-    }
+    // MARK: View Life Cycle
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.navigationController?.navigationBar.hidden = true
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        searchBar.delegate = self
+        recipeTable.delegate = self
+        recipeTable.dataSource = self
+
+        self.navigationController?.navigationBar.hidden = true
+    }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -44,7 +47,6 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
@@ -81,7 +83,8 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
     }
 
     
-    // MARK: API query handling
+    // MARK: API Query Handling
+    
     func makeCall(query: String){
         //Make the API call here
         let apiFetcher = RecipeFetcher()
@@ -100,7 +103,6 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
         }
     }
     
-    // MARK: Asynchronous image loading
     func requestImage(url: NSURL, success: (UIImage?) -> Void){
         requestURL(url, success: { (data) -> Void in
             if let d = data {
@@ -120,7 +122,8 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
     }
     
     
-    // MARK: Table View Handling
+    // MARK: UITableViewDelegate
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -144,14 +147,7 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
             cell.recipeImage.image = myImage
         }
         
-        
-        
-        
-        return cell   
-        
-        
-        
+        return cell
     }
     
-
 }

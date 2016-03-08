@@ -97,11 +97,8 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func saveMealAndIngredients(savedRecipe: Recipe){
         
-        print("Saving dat good stuff")
-        
         
         tbvc.savedRecipes.append(savedRecipe)
-        
         tbvc.updateIngredientList(savedRecipe.ingredientArray!)
         
     }
