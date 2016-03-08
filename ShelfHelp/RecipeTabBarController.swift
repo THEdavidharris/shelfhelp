@@ -11,15 +11,14 @@ import UIKit
 class RecipeTabBarController: UITabBarController {
     
     // MARK: Variables
+    
     var savedRecipes = [Recipe]()
     var groceryList = [Ingredient]()
+    
+    // MARK: View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        print("View did load - from TabBarController")
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,16 +63,4 @@ class RecipeTabBarController: UITabBarController {
         }
         
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

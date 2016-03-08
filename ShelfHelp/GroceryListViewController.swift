@@ -9,12 +9,22 @@
 import UIKit
 
 class GroceryListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     // MARK: Attributes
+    
     @IBOutlet weak var groceryTable: UITableView!
-    // MARK: Variables
     var tbvc: RecipeTabBarController!
+    
+    // MARK: Variables
+    
     var groceryList=[Ingredient]()
     
+    // MARK: View Life Cycle
+    
+    override func viewWillAppear(animated: Bool) {
+        groceryList = self.tbvc.groceryList
+        groceryTable.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,17 +39,13 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
         groceryTable.reloadData()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        groceryList = self.tbvc.groceryList
-        groceryTable.reloadData()
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: Table View Functions
+    // MARK: UITableViewDelegate
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }

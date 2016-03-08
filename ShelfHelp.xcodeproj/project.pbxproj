@@ -143,8 +143,8 @@
 		FF4237B11C7545A60092E949 /* ShelfHelp */ = {
 			isa = PBXGroup;
 			children = (
-				FF4237B21C7545A60092E949 /* AppDelegate.swift */,
 				2CDBDFE11C7ACD7300DBFF28 /* Models */,
+				FF4237B21C7545A60092E949 /* AppDelegate.swift */,
 				2C37FD231C767C2700B7BAA0 /* RecipeFetcher.swift */,
 				FF4237B41C7545A60092E949 /* GroceryListViewController.swift */,
 				FF4237B61C7545A60092E949 /* MealListViewController.swift */,

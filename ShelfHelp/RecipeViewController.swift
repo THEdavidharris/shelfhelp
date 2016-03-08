@@ -10,11 +10,6 @@ import UIKit
 
 class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    // MARK: Variables
-    var recipe: Recipe?
-    var tbvc: RecipeTabBarController!
-    var prevIngredient: String = ""
-    
     // MARK: Attributes
     
     @IBOutlet weak var recipeTitle: UILabel!
@@ -22,7 +17,14 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var recipeDescription: UILabel!
     @IBOutlet weak var ingredientTable: UITableView!
     @IBOutlet weak var addMealButton: UIBarButtonItem!
+    var tbvc: RecipeTabBarController!
     
+    // MARK: Variables
+    var recipe: Recipe?
+    var prevIngredient: String = ""
+    
+    
+    // MARK: View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +47,6 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.recipeTitle.text = recipe?.label
         self.recipeImage.image = recipe?.image
  
-
-        
         return
     }
 
@@ -55,8 +55,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: Table
-    
+    // MARK: UITableViewDelegate
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         ingredientTable.rowHeight = UITableViewAutomaticDimension
@@ -83,17 +82,8 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // for exact same string in previous ingredient
         return cell
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
-    
+    // MARK: Helper Functions
     
     func saveMealAndIngredients(savedRecipe: Recipe){
         
@@ -113,7 +103,6 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func addMealToList(sender: UIBarButtonItem) {
         
         self.saveMealAndIngredients(self.recipe!)
-    }
-    
+    }    
 
 }

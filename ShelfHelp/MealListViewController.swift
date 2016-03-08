@@ -10,9 +10,21 @@ import UIKit
 
 class MealListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    // MARK: Attributes
+    
     @IBOutlet weak var mealTable: UITableView!
     var tbvc: RecipeTabBarController!
+    
+    // MARK: Variables
+    
     var mealList = [Recipe]()
+    
+    // MARK: View Life Cycle
+    
+    override func viewWillAppear(animated: Bool) {
+        mealList = self.tbvc.savedRecipes
+        mealTable.reloadData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,21 +36,14 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
         self.tbvc = tabBarController as! RecipeTabBarController
         
         mealList = self.tbvc.savedRecipes
-        
-        
     }
     
-    override func viewWillAppear(animated: Bool) {
-        mealList = self.tbvc.savedRecipes
-
-        mealTable.reloadData()
-
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
@@ -51,7 +56,8 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    // MARK: Table View Functions
+    // MARK: UITableViewDelegate
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -80,7 +86,5 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
             
         }
     }
-
-
 }
 

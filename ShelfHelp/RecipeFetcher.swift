@@ -15,8 +15,6 @@ class RecipeFetcher {
     
     let api_url = "https://api.edamam.com/search"
     
-    //let full_url = "https://api.edamam.com/search?q=chicken&app_id=2a0606b2&app_key=1b56a25e79ac65f480899138abdfcfcd"
-    
     func getRecipes(query: String, completionHandler: (RecipeResponseObject?, ErrorType?) -> Void){
         
         let params = [
@@ -35,12 +33,8 @@ class RecipeFetcher {
             case .Failure(let error):
                 completionHandler(nil, error)
             }
-            
-            
         }
     }
-    
-    
 }
 
 
