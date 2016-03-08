@@ -18,7 +18,8 @@ class Recipe: Mappable {
     var imageURL: NSURL?
     var source: String?
     var sourceURL: NSURL?
-    var ingredientArray: Set<Ingredient>?
+    var ingredientSet: Set<Ingredient>?
+    var ingredientArray = [Ingredient]()
     var image: UIImage?
     var summary: String?
     
@@ -32,7 +33,13 @@ class Recipe: Mappable {
         imageURL <- (map["image"], URLTransform())
         source <- map["source"]
         sourceURL <- (map["url"], URLTransform())
-        ingredientArray <- map["ingredients"]
+        ingredientSet <- map["ingredients"]
         summary <- map["summary"]
+        
+        for item in ingredientSet! {
+            ingredientArray.append(item)
+        }
+        
+        return
     }
 }

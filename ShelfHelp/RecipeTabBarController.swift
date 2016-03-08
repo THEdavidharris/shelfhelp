@@ -28,7 +28,7 @@ class RecipeTabBarController: UITabBarController {
     
     // MARK: Functionality
     
-    func updateIngredientList(ingredients: Set<Ingredient>){
+    func updateIngredientList(ingredients: [Ingredient]){
         
         print("Updating ingredient list")
         
