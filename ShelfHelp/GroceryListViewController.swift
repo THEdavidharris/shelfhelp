@@ -60,6 +60,8 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! GroceryTableViewCell
         let ingredient = groceryList[indexPath.row]
         
+        
+        // What is this? --David
         cell.ingredientLabel.text = ingredient.name
         if (ingredient.unit != nil && ingredient.quantity! > 0){
             cell.quantityLabel.text = String(format: "%.1f", ingredient.quantity!)
@@ -68,6 +70,13 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
         } else {
             cell.quantityLabel.text = ""
             cell.unitLabel.text = ""
+        }
+        
+        if (ingredient.checked == true) {
+            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        }
+        else{
+            cell.accessoryType = UITableViewCellAccessoryType.None
         }
         
         return cell
@@ -85,10 +94,15 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("CELL TOUCHED")
         // get ready to check stuff off on touch
-
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        
+        let tappedItem = groceryList[indexPath.row] as Ingredient
+        tappedItem.checked = !tappedItem.checked
+        
+        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+        
     }
-
-
 
 }
 

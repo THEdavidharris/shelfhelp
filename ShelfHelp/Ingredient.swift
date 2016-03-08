@@ -16,6 +16,7 @@ class Ingredient: Mappable, Hashable {
     var quantity: Double?
     var unit: String?
     var name: String?
+    var checked: Bool!
     
     var hashValue: Int {
         return self.text!.hashValue
@@ -26,6 +27,9 @@ class Ingredient: Mappable, Hashable {
     }
     
     func mapping(map: Map){
+        
+        self.checked = false
+        
         text <- map["text"]
         quantity <- map["quantity"]
         unit <- map["measure.label"]
