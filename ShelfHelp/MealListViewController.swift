@@ -59,6 +59,8 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
     // MARK: UITableViewDelegate
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        mealTable.rowHeight = UITableViewAutomaticDimension
+        mealTable.estimatedRowHeight = 160.0
         return 1
     }
     
