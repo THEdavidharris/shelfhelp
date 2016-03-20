@@ -18,16 +18,13 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: Variables
     
-    var groceryList=[Ingredient]()
-    
     var ingredientList: Results<Ingredient>!
     
     
     // MARK: View Life Cycle
     
     override func viewWillAppear(animated: Bool) {
-        groceryList = self.tbvc.groceryList
-        groceryTable.reloadData()
+        retrieveIngredientsAndUpdateUI()
     }
     
     override func viewDidLoad() {
@@ -36,11 +33,6 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
         groceryTable.delegate = self
         groceryTable.dataSource = self
         self.tbvc = tabBarController as! RecipeTabBarController
-        
-        groceryList = self.tbvc.groceryList
-
-        
-        groceryTable.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,7 +41,7 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     // MARK: Realm data handling
-    func retrieveRecipesAndUpdateUI(){
+    func retrieveIngredientsAndUpdateUI(){
         let realm = try! Realm()
         ingredientList = realm.objects(Ingredient)
         self.groceryTable.reloadData()
@@ -62,14 +54,14 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (groceryList.count)
+        return (ingredientList.count)
         // took out self.tbvc.groceryList.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "GroceryItemCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! GroceryTableViewCell
-        let ingredient = groceryList[indexPath.row]
+        let ingredient = ingredientList[indexPath.row]
         
         
         // What is this? --David
@@ -95,21 +87,27 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete{
-            self.tbvc.groceryList.removeAtIndex(indexPath.row)
-            groceryList.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            let ingredientVictim = ingredientList[indexPath.row]
+            let realm = try! Realm()
+            try! realm.write {
+                realm.delete(ingredientVictim)
+            }
+            
+            //tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            self.retrieveIngredientsAndUpdateUI()
             
         }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("CELL TOUCHED")
-        // get ready to check stuff off on touch
         
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         
-        let tappedItem = groceryList[indexPath.row] as Ingredient
-        tappedItem.checked = !tappedItem.checked
+        let tappedItem = ingredientList[indexPath.row] as Ingredient
+        let realm = try! Realm()
+        try! realm.write {
+            tappedItem.checked = !tappedItem.checked
+        }
         
         tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
         

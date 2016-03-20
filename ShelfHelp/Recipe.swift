@@ -17,9 +17,9 @@ class Recipe: Object, Mappable {
     dynamic var uuid = NSUUID().UUIDString
     dynamic var uri = ""
     dynamic var label = ""
-    dynamic var imageURL = NSURL(string: "")
+    dynamic var imageURL = ""
     dynamic var source = ""
-    dynamic var sourceURL = NSURL(string: "")
+    dynamic var sourceURL = ""
     let ingredientArray = List<Ingredient>()
     
     // Non-stored properties
@@ -40,9 +40,9 @@ class Recipe: Object, Mappable {
     func mapping(map: Map){
         uri <- map["uri"]
         label <- map["label"]
-        imageURL <- (map["image"], URLTransform())
+        imageURL <- map["image"]
         source <- map["source"]
-        sourceURL <- (map["url"], URLTransform())
+        sourceURL <- map["url"]
         
         var ingredientSet: Set<Ingredient>?
         ingredientSet <- map["ingredients"]
