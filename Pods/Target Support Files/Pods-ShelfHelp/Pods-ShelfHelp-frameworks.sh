@@ -87,9 +87,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-ShelfHelp/Alamofire.framework"
   install_framework "Pods-ShelfHelp/AlamofireObjectMapper.framework"
   install_framework "Pods-ShelfHelp/ObjectMapper.framework"
+  install_framework "Pods-ShelfHelp/Realm.framework"
+  install_framework "Pods-ShelfHelp/RealmSwift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-ShelfHelp/Alamofire.framework"
   install_framework "Pods-ShelfHelp/AlamofireObjectMapper.framework"
   install_framework "Pods-ShelfHelp/ObjectMapper.framework"
+  install_framework "Pods-ShelfHelp/Realm.framework"
+  install_framework "Pods-ShelfHelp/RealmSwift.framework"
 fi
