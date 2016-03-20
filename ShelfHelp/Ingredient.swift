@@ -8,28 +8,25 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
-
-
-class Ingredient: Mappable, Hashable {
-    var text: String?
-    var quantity: Double?
-    var unit: String?
-    var name: String?
-    var checked: Bool!
+class Ingredient: Object, Mappable, Hashable {
+    dynamic var uuid = NSUUID().UUIDString
+    dynamic var text = ""
+    dynamic var quantity = 0
+    dynamic var unit = ""
+    dynamic var name = ""
+    dynamic var checked = false
     
-    var hashValue: Int {
-        return self.text!.hashValue
+    required convenience init?(_ map: Map){
+        self.init()
     }
     
-    required init?(_ map: Map){
-        mapping(map)
+    override static func primaryKey() -> String? {
+        return "uuid"
     }
     
     func mapping(map: Map){
-        
-        self.checked = false
-        
         text <- map["text"]
         quantity <- map["quantity"]
         unit <- map["measure.label"]

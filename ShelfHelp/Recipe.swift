@@ -9,22 +9,32 @@
 import Foundation
 import ObjectMapper
 import AlamofireObjectMapper
-//Not sure what the correct import should be
+import RealmSwift
 
-class Recipe: Mappable {
+class Recipe: Object, Mappable {
     
-    var uri: String?
-    var label: String?
-    var imageURL: NSURL?
-    var source: String?
-    var sourceURL: NSURL?
-    var ingredientSet: Set<Ingredient>?
-    var ingredientArray = [Ingredient]()
-    var image: UIImage?
-    var summary: String?
+    // Stored properties
+    dynamic var uuid = NSUUID().UUIDString
+    dynamic var uri = ""
+    dynamic var label = ""
+    dynamic var imageURL = NSURL(string: "")
+    dynamic var source = ""
+    dynamic var sourceURL = NSURL(string: "")
+    let ingredientArray = List<Ingredient>()
     
-    required init?(_ map: Map){
-        mapping(map)
+    // Non-stored properties
+    dynamic var image: UIImage?
+    
+    required convenience init?(_ map: Map){
+        self.init()
+    }
+    
+    override static func ignoredProperties() -> [String] {
+        return ["image"]
+    }
+    
+    override static func primaryKey() -> String {
+        return "uuid"
     }
     
     func mapping(map: Map){
@@ -33,8 +43,9 @@ class Recipe: Mappable {
         imageURL <- (map["image"], URLTransform())
         source <- map["source"]
         sourceURL <- (map["url"], URLTransform())
+        
+        var ingredientSet: Set<Ingredient>?
         ingredientSet <- map["ingredients"]
-        summary <- map["summary"]
         
         for item in ingredientSet! {
             ingredientArray.append(item)

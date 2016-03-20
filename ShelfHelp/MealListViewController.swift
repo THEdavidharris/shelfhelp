@@ -19,6 +19,7 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
     
     var mealList = [Recipe]()
     
+    
     // MARK: View Life Cycle
     
     override func viewWillAppear(animated: Bool) {

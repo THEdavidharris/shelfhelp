@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -103,7 +104,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func saveMealAndIngredients(savedRecipe: Recipe){
         
         tbvc.savedRecipes.append(savedRecipe)
-        tbvc.updateIngredientList(savedRecipe.ingredientArray)
+        //tbvc.updateIngredientList(savedRecipe.ingredientArray)
         
     }
     
@@ -117,6 +118,14 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func addMealToList(sender: UIBarButtonItem) {
         
         self.saveMealAndIngredients(self.recipe!)
+        
+        // Get the default Realm
+        let realm = try! Realm()
+        
+        // Add to the Realm inside a transaction
+        try! realm.write {
+            realm.add(self.recipe!)
+        }
     }
 
 }

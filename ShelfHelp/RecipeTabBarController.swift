@@ -44,7 +44,7 @@ class RecipeTabBarController: UITabBarController {
                     // Check that units are the same
                     if item.unit == newItem.unit {
                         // Update value
-                        item.quantity! += newItem.quantity!
+                        item.quantity += newItem.quantity
                     }
                     // If units are different
                     else {

@@ -19,6 +19,7 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     
     var groceryList=[Ingredient]()
     
+    
     // MARK: View Life Cycle
     
     override func viewWillAppear(animated: Bool) {
@@ -63,8 +64,8 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
         
         // What is this? --David
         cell.ingredientLabel.text = ingredient.name
-        if (ingredient.unit != nil && ingredient.quantity! > 0){
-            cell.quantityLabel.text = String(format: "%.1f", ingredient.quantity!)
+        if (ingredient.unit != "" && ingredient.quantity > 0){
+            cell.quantityLabel.text = String(format: "%.1f", ingredient.quantity)
             cell.unitLabel.text = ingredient.unit
             print ("NOT NIL")
         } else {
