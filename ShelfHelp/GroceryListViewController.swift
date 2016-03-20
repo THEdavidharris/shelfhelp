@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class GroceryListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -18,6 +19,8 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: Variables
     
     var groceryList=[Ingredient]()
+    
+    var ingredientList: Results<Ingredient>!
     
     
     // MARK: View Life Cycle
@@ -43,6 +46,13 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: Realm data handling
+    func retrieveRecipesAndUpdateUI(){
+        let realm = try! Realm()
+        ingredientList = realm.objects(Ingredient)
+        self.groceryTable.reloadData()
     }
     
     // MARK: UITableViewDelegate

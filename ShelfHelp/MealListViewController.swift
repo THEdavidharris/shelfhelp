@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MealListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -18,6 +19,8 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
     // MARK: Variables
     
     var mealList = [Recipe]()
+    
+    var recipeList: Results<Recipe>!
     
     
     // MARK: View Life Cycle
@@ -42,6 +45,13 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: Realm data handling
+    func readRecipesAndUpdateUI(){
+        let realm = try! Realm()
+        recipeList = realm.objects(Recipe)
+        self.mealTable.reloadData()
     }
     
     // MARK: Navigation
