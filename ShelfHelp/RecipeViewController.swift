@@ -19,7 +19,6 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var ingredientTable: UITableView!
     @IBOutlet weak var addMealButton: UIBarButtonItem!
     @IBOutlet weak var goToRecipeButton: UIButton!
-    var tbvc: RecipeTabBarController!
     
     // MARK: Variables
     var recipe: Recipe?
@@ -35,11 +34,6 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         ingredientTable.delegate = self
         ingredientTable.dataSource = self
         
-        
-        // Connect to TabBarController
-        if (tabBarController != nil){
-        self.tbvc = tabBarController as! RecipeTabBarController
-        }
         
         // Hide the navbar and tabbar
         self.navigationController?.navigationBar.hidden = false
@@ -86,16 +80,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let ingredient = recipe?.ingredientArray[indexPath.row]
         
         cell.ingredientLabel.text = ingredient!.text
-//        
-//        if ((ingredient?.text)! != prevIngredient){
-//            cell.ingredientLabel.text = ingredient?.text
-//        } else {
-//            cell.ingredientLabel.text = ""
-//        }
-//        prevIngredient = (ingredient?.text)!
-                                                //.name
-        // if we go with just the text, try to remove duplicates by checking
-        // for exact same string in previous ingredient
+
         return cell
     }
     
@@ -103,8 +88,43 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func saveMealAndIngredients(savedRecipe: Recipe){
         
-        tbvc.savedRecipes.append(savedRecipe)
         //tbvc.updateIngredientList(savedRecipe.ingredientArray)
+        
+//        func updateIngredientList(ingredients: [Ingredient]){
+//            
+//            print("Updating ingredient list")
+//            
+//            // For each ingredient:
+//            var found: Bool = false
+//            
+//            
+//            for newItem in ingredients {
+//                for item in groceryList {
+//                    // If it exists in the list
+//                    if item.name == newItem.name {
+//                        found = true
+//                        // Check that units are the same
+//                        if item.unit == newItem.unit {
+//                            // Update value
+//                            item.quantity += newItem.quantity
+//                        }
+//                            // If units are different
+//                        else {
+//                            groceryList.append(newItem)
+//                        }
+//                        break
+//                    }
+//                    
+//                }
+//                
+//                // Not found
+//                if (!found){
+//                    groceryList.append(newItem)
+//                }
+//                found = false;
+//            }
+//            
+//        }
         
     }
     

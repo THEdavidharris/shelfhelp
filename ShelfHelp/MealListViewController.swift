@@ -14,7 +14,6 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
     // MARK: Attributes
     
     @IBOutlet weak var mealTable: UITableView!
-    var tbvc: RecipeTabBarController!
     
     // MARK: Variables
     var recipeList: Results<Recipe>!
@@ -32,8 +31,6 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
         
         mealTable.delegate = self
         mealTable.dataSource = self
-        
-        self.tbvc = tabBarController as! RecipeTabBarController
         
     }
     

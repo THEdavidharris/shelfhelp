@@ -14,7 +14,6 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: Attributes
     
     @IBOutlet weak var groceryTable: UITableView!
-    var tbvc: RecipeTabBarController!
     
     // MARK: Variables
     
@@ -32,7 +31,6 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
         // Do any additional setup after loading the view, typically from a nib.
         groceryTable.delegate = self
         groceryTable.dataSource = self
-        self.tbvc = tabBarController as! RecipeTabBarController
     }
     
     override func didReceiveMemoryWarning() {
