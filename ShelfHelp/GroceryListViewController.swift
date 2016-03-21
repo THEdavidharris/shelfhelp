@@ -42,6 +42,7 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: Realm data handling
     func retrieveIngredientsAndUpdateUI(){
+        
         let realm = try! Realm()
         ingredientList = realm.objects(Ingredient)
         self.groceryTable.reloadData()
@@ -69,7 +70,6 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
         if (ingredient.unit != "" && ingredient.quantity > 0){
             cell.quantityLabel.text = String(format: "%.1f", ingredient.quantity)
             cell.unitLabel.text = ingredient.unit
-            print ("NOT NIL")
         } else {
             cell.quantityLabel.text = ""
             cell.unitLabel.text = ""

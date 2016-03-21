@@ -13,7 +13,7 @@ import RealmSwift
 class Ingredient: Object, Mappable, Hashable {
     dynamic var uuid = NSUUID().UUIDString
     dynamic var text = ""
-    dynamic var quantity = 0
+    dynamic var quantity = 0.0
     dynamic var unit = ""
     dynamic var name = ""
     dynamic var checked = false
