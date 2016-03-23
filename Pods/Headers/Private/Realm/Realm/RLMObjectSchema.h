@@ -1,1 +1,5 @@
+XSym
+0049
+c4ea1d7078a35b9c487100aea9e4664e
 ../../../../Realm/include/Realm/RLMObjectSchema.h
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              

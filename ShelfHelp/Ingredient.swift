@@ -18,13 +18,29 @@ class Ingredient: Object, Mappable, Hashable {
     dynamic var name = ""
     dynamic var checked = false
     
-    required convenience init?(_ map: Map){
-        self.init()
+    func setCompoundName(name: String){
+        self.name = name
+        compoundKey = compoundKeyValue()
     }
     
-    override static func primaryKey() -> String? {
-        return "uuid"
+    func setCompoundUnit(unit: String){
+        self.unit = unit
+        compoundKey = compoundKeyValue()
     }
+    
+    dynamic lazy var compoundKey: String = self.compoundKeyValue()
+    
+    override static func primaryKey() -> String? {
+        return "compoundKey"
+    }
+    
+    func compoundKeyValue() -> String {
+        return "\(name)\(unit)"
+    }
+    
+    required convenience init?(_ map: Map){
+        self.init()
+    }   
     
     func mapping(map: Map){
         text <- map["text"]

@@ -84,49 +84,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-    // MARK: Helper Functions
     
-    func saveMealAndIngredients(savedRecipe: Recipe){
-        
-        //tbvc.updateIngredientList(savedRecipe.ingredientArray)
-        
-//        func updateIngredientList(ingredients: [Ingredient]){
-//            
-//            print("Updating ingredient list")
-//            
-//            // For each ingredient:
-//            var found: Bool = false
-//            
-//            
-//            for newItem in ingredients {
-//                for item in groceryList {
-//                    // If it exists in the list
-//                    if item.name == newItem.name {
-//                        found = true
-//                        // Check that units are the same
-//                        if item.unit == newItem.unit {
-//                            // Update value
-//                            item.quantity += newItem.quantity
-//                        }
-//                            // If units are different
-//                        else {
-//                            groceryList.append(newItem)
-//                        }
-//                        break
-//                    }
-//                    
-//                }
-//                
-//                // Not found
-//                if (!found){
-//                    groceryList.append(newItem)
-//                }
-//                found = false;
-//            }
-//            
-//        }
-        
-    }
     
     // MARK: Actions
     
@@ -136,9 +94,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @IBAction func addMealToList(sender: UIBarButtonItem) {
-        
-        self.saveMealAndIngredients(self.recipe!)
-        
+                
         // Get the default Realm
         let realm = try! Realm()
         
@@ -146,6 +102,30 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         try! realm.write {
             realm.add(self.recipe!)
         }
+        
+        self.saveAndAggregateIngredients(self.recipe!)
+    }
+    
+    // MARK: Helper Functions
+    
+    func saveAndAggregateIngredients(savedRecipe: Recipe){
+        
+        let realm = try! Realm()
+        
+        for item in Recipe.ingredientArray {
+            try! realm.write() {
+                
+                let ingredientResult = realm.objectForPrimaryKey(Ingredient.self, key: item.name + item.unit)
+                
+                if(ingredientResult != nil){
+                    ingredientResult.quantity = ingredientResult.quantity + item.quantity
+                }
+                else {
+                    realm.add(item)
+                }
+            }            
+        }       
+        
     }
 
 }
