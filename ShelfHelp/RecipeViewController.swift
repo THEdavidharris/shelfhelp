@@ -103,22 +103,23 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
             realm.add(self.recipe!)
         }
         
-        self.saveAndAggregateIngredients(self.recipe!)
+        self.saveAndAggregateIngredients()
     }
     
     // MARK: Helper Functions
     
-    func saveAndAggregateIngredients(savedRecipe: Recipe){
+    func saveAndAggregateIngredients(){
         
         let realm = try! Realm()
         
-        for item in Recipe.ingredientArray {
+        for item in self.recipe!.ingredientArray {
             try! realm.write() {
                 
                 let ingredientResult = realm.objectForPrimaryKey(Ingredient.self, key: item.name + item.unit)
+                print(ingredientResult)
                 
                 if(ingredientResult != nil){
-                    ingredientResult.quantity = ingredientResult.quantity + item.quantity
+                    ingredientResult!.quantity = ingredientResult!.quantity + item.quantity
                 }
                 else {
                     realm.add(item)

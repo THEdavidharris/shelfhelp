@@ -17,25 +17,10 @@ class Ingredient: Object, Mappable, Hashable {
     dynamic var unit = ""
     dynamic var name = ""
     dynamic var checked = false
-    
-    func setCompoundName(name: String){
-        self.name = name
-        compoundKey = compoundKeyValue()
-    }
-    
-    func setCompoundUnit(unit: String){
-        self.unit = unit
-        compoundKey = compoundKeyValue()
-    }
-    
-    dynamic lazy var compoundKey: String = self.compoundKeyValue()
+    dynamic var compoundKey = ""
     
     override static func primaryKey() -> String? {
         return "compoundKey"
-    }
-    
-    func compoundKeyValue() -> String {
-        return "\(name)\(unit)"
     }
     
     required convenience init?(_ map: Map){
@@ -47,6 +32,8 @@ class Ingredient: Object, Mappable, Hashable {
         quantity <- map["quantity"]
         unit <- map["measure.label"]
         name <- map["food.label"]
+        
+        self.compoundKey = self.name + self.unit
     }
 
 }
