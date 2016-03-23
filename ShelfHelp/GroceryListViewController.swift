@@ -39,10 +39,19 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     // MARK: Realm data handling
-    func retrieveIngredientsAndUpdateUI(){
-        
+    func retrieveIngredientsAndUpdateUI(){        
         let realm = try! Realm()
         ingredientList = realm.objects(Ingredient)
+        self.groceryTable.reloadData()
+    }
+    
+    func deleteAllIngredientsAndUpdateUI(){
+        let realm = try! Realm()
+        try! realm.write {
+            for item in ingredientList {
+                realm.delete(item)
+            }
+        }
         self.groceryTable.reloadData()
     }
     

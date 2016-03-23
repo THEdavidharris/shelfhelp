@@ -46,6 +46,16 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
         self.mealTable.reloadData()
     }
     
+    func deleteAllRecipesAndUpdateUI(){
+        let realm = try! Realm()
+        try! realm.write {
+            for item in recipeList{
+                realm.delete(item)
+            }
+        }
+        self.mealTable.reloadData()
+    }
+    
     // MARK: Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
