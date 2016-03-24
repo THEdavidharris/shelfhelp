@@ -20,15 +20,12 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     var mealList: Results<Recipe>!
     var ingredientList: Results<Ingredient>!
     
-    
-    var sectionedTable: Bool = true
-    
+    var sectionedTable: Bool = false
     
     // MARK: View Life Cycle
     
     override func viewWillAppear(animated: Bool) {
-        //retrieveIngredientsAndUpdateUI()
-        retrieveMealsAndUpdateUI()
+        retrieveElementsAndUpdateUI()
     }
     
     override func viewDidLoad() {
@@ -36,6 +33,7 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
         // Do any additional setup after loading the view, typically from a nib.
         groceryTable.delegate = self
         groceryTable.dataSource = self
+        retrieveElementsAndUpdateUI()
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,15 +42,11 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     // MARK: Realm data handling
-    func retrieveIngredientsAndUpdateUI(){        
+
+    func retrieveElementsAndUpdateUI(){
         let realm = try! Realm()
-        ingredientList = realm.objects(Ingredient)
-        self.groceryTable.reloadData()
-    }
-    
-    func retrieveMealsAndUpdateUI(){
-        let realm = try! Realm()
-        mealList = realm.objects(Recipe)
+        mealList = realm.objects(Recipe).sorted("label")
+        ingredientList = realm.objects(Ingredient).sorted("name")
         self.groceryTable.reloadData()
     }
     
@@ -69,23 +63,43 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: UITableViewDelegate
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return self.mealList.count
+        if self.sectionedTable == true {
+            return self.mealList.count
+        }
+        else {
+            return 1
+        }
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.mealList[section].label
+        if self.sectionedTable == true {
+            return self.mealList[section].label
+        }
+        else {
+            return nil
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.mealList[section].ingredientArray.count
-        // took out self.tbvc.groceryList.count
+        if self.sectionedTable == true {
+            return self.mealList[section].ingredientArray.count
+        }
+        else {
+            return self.ingredientList.count
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "GroceryItemCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! GroceryTableViewCell
         
-        let ingredient = self.mealList[indexPath.section].ingredientArray[indexPath.row]
+        let ingredient: Ingredient!
+        if(sectionedTable == true){
+            ingredient = self.mealList[indexPath.section].ingredientArray[indexPath.row]
+        }
+        else {
+            ingredient = self.ingredientList[indexPath.row]
+        }
         
         
         // What is this? --David
@@ -117,7 +131,7 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
             }
             
             //tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-            self.retrieveIngredientsAndUpdateUI()
+            self.groceryTable.reloadData()
             
         }
     }
@@ -142,14 +156,15 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
         switch self.segmentedController.selectedSegmentIndex
         {
         case 0:
-            self.sectionedTable = true
-        case 1:
             self.sectionedTable = false
-        default:
+        case 1:
             self.sectionedTable = true
+        default:
+            self.sectionedTable = false
             break;
         }
-        print(self.sectionedTable)
+        
+        self.groceryTable.reloadData()
     }
 }
 

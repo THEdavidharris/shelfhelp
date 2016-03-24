@@ -21,6 +21,10 @@ class Ingredient: Object, Mappable, Hashable {
     
     dynamic var recipeName = ""
     
+    func setCompoundKey(){
+        self.compoundKey = self.recipeName + self.name
+    }
+    
     override static func primaryKey() -> String? {
         return "compoundKey"
     }
@@ -34,8 +38,6 @@ class Ingredient: Object, Mappable, Hashable {
         quantity <- map["quantity"]
         unit <- map["measure.label"]
         name <- map["food.label"]
-        
-        self.compoundKey = self.name + self.unit
     }
 
 }

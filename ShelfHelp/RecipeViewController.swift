@@ -97,6 +97,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         for item in self.recipe!.ingredientArray {
             item.recipeName = self.recipe!.label
+            item.setCompoundKey()
         }
                 
         // Get the default Realm
@@ -119,16 +120,18 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         for item in self.recipe!.ingredientArray {
             try! realm.write() {
                 
-                let ingredientResult = realm.objectForPrimaryKey(Ingredient.self, key: item.name + item.unit)
-                print(ingredientResult)
+//                let ingredientResult = realm.objectForPrimaryKey(Ingredient.self, key: item.name + item.unit)
+//                print(ingredientResult)
+//                
+//                if(ingredientResult != nil){
+//                    ingredientResult!.quantity = ingredientResult!.quantity + item.quantity
+//                }
+//                else {
+//                    realm.add(item)
+//                }
                 
-                if(ingredientResult != nil){
-                    ingredientResult!.quantity = ingredientResult!.quantity + item.quantity
-                }
-                else {
-                    realm.add(item)
-                }
-            }            
+                realm.add(item)
+            }
         }       
         
     }
