@@ -21,9 +21,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var goToRecipeButton: UIButton!
     
     // MARK: Variables
-    var recipe: Recipe?
-    var prevIngredient: String = ""
-    
+    var recipe: Recipe!
     
     // MARK: View Life Cycle
 
@@ -40,17 +38,14 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.tabBarController?.hidesBottomBarWhenPushed = true
 
         
-        self.recipeTitle.text = recipe?.label
-        self.recipeImage.image = recipe?.image
+        self.recipeTitle.text = recipe.label
+        self.recipeImage.image = recipe.image
         
         
         if let recipeSource = self.recipe?.source{
             let sourceString = "View recipe at \(recipeSource)"
-            
             self.goToRecipeButton.setTitle(sourceString, forState: .Normal)
         }
-        
-        
         
         return
 
@@ -70,16 +65,16 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (recipe?.ingredientArray.count)!
+        return recipe.staticIngredients.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "recipeIngredientCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! RecipeIngredientTableViewCell
         
-        let ingredient = recipe?.ingredientArray[indexPath.row]
+        let ingredient = recipe?.staticIngredients[indexPath.row]
         
-        cell.ingredientLabel.text = ingredient!.text
+        cell.ingredientLabel.text = ingredient?.stringValue
 
         return cell
     }
@@ -108,32 +103,8 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
             realm.add(self.recipe!)
         }
         
-        self.saveAndAggregateIngredients()
     }
     
     // MARK: Helper Functions
-    
-    func saveAndAggregateIngredients(){
-        
-        let realm = try! Realm()
-        
-        for item in self.recipe!.ingredientArray {
-            try! realm.write() {
-                
-//                let ingredientResult = realm.objectForPrimaryKey(Ingredient.self, key: item.name + item.unit)
-//                print(ingredientResult)
-//                
-//                if(ingredientResult != nil){
-//                    ingredientResult!.quantity = ingredientResult!.quantity + item.quantity
-//                }
-//                else {
-//                    realm.add(item)
-//                }
-                
-                realm.add(item)
-            }
-        }       
-        
-    }
 
 }

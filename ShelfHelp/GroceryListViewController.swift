@@ -140,14 +140,23 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
         
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         
-        let tappedItem = ingredientList[indexPath.row] as Ingredient
-        let realm = try! Realm()
-        try! realm.write {
-            tappedItem.checked = !tappedItem.checked
+        let tappedItem: Ingredient!
+        if(sectionedTable == true){
+            tappedItem = mealList[indexPath.section].ingredientArray[indexPath.row] as Ingredient
+            let realm = try! Realm()
+            try! realm.write {
+                tappedItem.checked = !tappedItem.checked
+            }
+            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
         }
-        
-        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
-        
+        else {
+            let tappedItem = ingredientList[indexPath.row] as Ingredient
+            let realm = try! Realm()
+            try! realm.write {
+                tappedItem.checked = !tappedItem.checked
+            }
+            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+        }
     }
     
     // MARK: Actions

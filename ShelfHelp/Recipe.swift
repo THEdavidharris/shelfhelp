@@ -22,7 +22,10 @@ class Recipe: Object, Mappable {
     dynamic var sourceURL = ""
     let ingredientArray = List<Ingredient>()
     
-    var ingredientSet: Set<Ingredient> = Set()
+    // DO NOT DELETE ITEMS FROM THIS
+    let staticIngredients = List<RLMString>()
+    
+    
     
     // Non-stored properties
     dynamic var image: UIImage?
@@ -32,7 +35,7 @@ class Recipe: Object, Mappable {
     }
     
     override static func ignoredProperties() -> [String] {
-        return ["image", "ingredientSet"]
+        return ["image"]
     }
     
     override static func primaryKey() -> String {
@@ -45,10 +48,15 @@ class Recipe: Object, Mappable {
         imageURL <- map["image"]
         source <- map["source"]
         sourceURL <- map["url"]
+        
+        var ingredientSet: Set<Ingredient> = Set()
         ingredientSet <- map["ingredients"]
         
         for item in ingredientSet {
             ingredientArray.append(item)
+            let obj = RLMString()
+            obj.stringValue = item.text
+            staticIngredients.append(obj)
         }
         
         return
