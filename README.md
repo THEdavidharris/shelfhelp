@@ -35,5 +35,7 @@
   * Add launch screen
   * Make top bar
   * Get mockups from Max that will help
+* Bugs
+  * Deleting an ingredient deletes it from the meal screen too  
 
 
