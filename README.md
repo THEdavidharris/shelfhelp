@@ -2,12 +2,12 @@
 
 ## todo
 * Grocery List Screen
-  * Sort by meal and alphabetical by ingredient using the segment controller
+  * ~~Sort by meal and alphabetical by ingredient using the segment controller~~
   * Fix the gap between segment controller and table
   * Mark as bought and do more than just check it
   * Delete all
   * Delete bought items
-  * Add individual
+  * Add individual items
   * Edit button that will slide all cells to allow for editing
   * Table animation on delete cell
 * Meal List Screen
