@@ -91,6 +91,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2CB74B6A1CA44463008C412A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C772E2E1C7A541C004624DB /* FetchedRecipeViewCellTableViewCell.swift */,
+				FFE45D8E1C755CC200F7DB5F /* GroceryTableViewCell.swift */,
+				FFE45D921C755F6200F7DB5F /* MealTableViewCell.swift */,
+				FFBB66381C8CC44500EE0E9F /* RecipeIngredientTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		2CB74B6B1CA44478008C412A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FF4237B41C7545A60092E949 /* GroceryListViewController.swift */,
+				FF4237B61C7545A60092E949 /* MealListViewController.swift */,
+				FFE45D8C1C7554D100F7DB5F /* RecipeSearchViewController.swift */,
+				2CE12C221C7C0BE300209052 /* RecipeViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		2CB74B6C1CA44490008C412A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2C37FD231C767C2700B7BAA0 /* RecipeFetcher.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		2CDBDFE11C7ACD7300DBFF28 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,21 +171,15 @@
 		FF4237B11C7545A60092E949 /* ShelfHelp */ = {
 			isa = PBXGroup;
 			children = (
-				2CDBDFE11C7ACD7300DBFF28 /* Models */,
 				FF4237B21C7545A60092E949 /* AppDelegate.swift */,
-				2C37FD231C767C2700B7BAA0 /* RecipeFetcher.swift */,
-				FF4237B41C7545A60092E949 /* GroceryListViewController.swift */,
-				FF4237B61C7545A60092E949 /* MealListViewController.swift */,
+				2CB74B6B1CA44478008C412A /* Controllers */,
+				2CDBDFE11C7ACD7300DBFF28 /* Models */,
+				2CB74B6C1CA44490008C412A /* Helpers */,
+				2CB74B6A1CA44463008C412A /* Views */,
 				FF4237B81C7545A60092E949 /* Main.storyboard */,
 				FF4237BB1C7545A60092E949 /* Assets.xcassets */,
 				FF4237BD1C7545A60092E949 /* LaunchScreen.storyboard */,
 				FF4237C01C7545A60092E949 /* Info.plist */,
-				FFE45D8C1C7554D100F7DB5F /* RecipeSearchViewController.swift */,
-				2C772E2E1C7A541C004624DB /* FetchedRecipeViewCellTableViewCell.swift */,
-				FFE45D8E1C755CC200F7DB5F /* GroceryTableViewCell.swift */,
-				FFE45D921C755F6200F7DB5F /* MealTableViewCell.swift */,
-				2CE12C221C7C0BE300209052 /* RecipeViewController.swift */,
-				FFBB66381C8CC44500EE0E9F /* RecipeIngredientTableViewCell.swift */,
 			);
 			path = ShelfHelp;
 			sourceTree = "<group>";

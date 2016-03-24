@@ -18,12 +18,14 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: Variables
     
     var ingredientList: Results<Ingredient>!
+    var mealList: Results<Recipe>!
     
     
     // MARK: View Life Cycle
     
     override func viewWillAppear(animated: Bool) {
-        retrieveIngredientsAndUpdateUI()
+        //retrieveIngredientsAndUpdateUI()
+        retrieveMealsAndUpdateUI()
     }
     
     override func viewDidLoad() {
@@ -45,6 +47,12 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
         self.groceryTable.reloadData()
     }
     
+    func retrieveMealsAndUpdateUI(){
+        let realm = try! Realm()
+        mealList = realm.objects(Recipe)
+        self.groceryTable.reloadData()
+    }
+    
     func deleteAllIngredientsAndUpdateUI(){
         let realm = try! Realm()
         try! realm.write {
@@ -58,18 +66,23 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: UITableViewDelegate
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return self.mealList.count
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.mealList[section].label
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (ingredientList.count)
+        return self.mealList[section].ingredientArray.count
         // took out self.tbvc.groceryList.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "GroceryItemCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! GroceryTableViewCell
-        let ingredient = ingredientList[indexPath.row]
+        
+        let ingredient = self.mealList[indexPath.section].ingredientArray[indexPath.row]
         
         
         // What is this? --David

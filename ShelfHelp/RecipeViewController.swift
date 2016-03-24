@@ -94,6 +94,10 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @IBAction func addMealToList(sender: UIBarButtonItem) {
+        
+        for item in self.recipe!.ingredientArray {
+            item.recipeName = self.recipe!.label
+        }
                 
         // Get the default Realm
         let realm = try! Realm()

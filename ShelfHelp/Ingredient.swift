@@ -19,6 +19,8 @@ class Ingredient: Object, Mappable, Hashable {
     dynamic var checked = false
     dynamic var compoundKey = ""
     
+    dynamic var recipeName = ""
+    
     override static func primaryKey() -> String? {
         return "compoundKey"
     }
