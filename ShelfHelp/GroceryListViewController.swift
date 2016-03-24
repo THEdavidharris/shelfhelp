@@ -14,11 +14,14 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: Attributes
     
     @IBOutlet weak var groceryTable: UITableView!
+    @IBOutlet weak var segmentedController: UISegmentedControl!
     
     // MARK: Variables
-    
-    var ingredientList: Results<Ingredient>!
     var mealList: Results<Recipe>!
+    var ingredientList: Results<Ingredient>!
+    
+    
+    var sectionedTable: Bool = true
     
     
     // MARK: View Life Cycle
@@ -107,7 +110,7 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete{
-            let ingredientVictim = ingredientList[indexPath.row]
+            let ingredientVictim = self.mealList[indexPath.section].ingredientArray[indexPath.row]
             let realm = try! Realm()
             try! realm.write {
                 realm.delete(ingredientVictim)
@@ -132,6 +135,21 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
         tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
         
     }
+    
+    // MARK: Actions
 
+    @IBAction func segmentedControlSelected(sender: UISegmentedControl) {
+        switch self.segmentedController.selectedSegmentIndex
+        {
+        case 0:
+            self.sectionedTable = true
+        case 1:
+            self.sectionedTable = false
+        default:
+            self.sectionedTable = true
+            break;
+        }
+        print(self.sectionedTable)
+    }
 }
 
