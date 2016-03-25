@@ -13,6 +13,7 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: Attributes
     
+    @IBOutlet weak var DeleteAllGroceriesButton: UIBarButtonItem!
     @IBOutlet weak var EditGroceryListButton: UIBarButtonItem!
     @IBOutlet weak var groceryTable: UITableView!
     @IBOutlet weak var segmentedController: UISegmentedControl!
@@ -34,6 +35,8 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
         // Do any additional setup after loading the view, typically from a nib.
         groceryTable.delegate = self
         groceryTable.dataSource = self
+        DeleteAllGroceriesButton.tintColor = UIColor.clearColor()
+        DeleteAllGroceriesButton.enabled = false
         retrieveElementsAndUpdateUI()
     }
     
@@ -179,9 +182,32 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func editGroceryList(sender: UIBarButtonItem) {
         print("Edit groceries pushed")
+        self.groceryTable.editing = !self.groceryTable.editing
+        if (EditGroceryListButton.title == "Edit"){
+            EditGroceryListButton.title = "Cancel"
+            DeleteAllGroceriesButton.tintColor = UIColor.redColor()
+            DeleteAllGroceriesButton.enabled = true
+        } else {
+            EditGroceryListButton.title = "Edit"
+            DeleteAllGroceriesButton.tintColor = UIColor.clearColor()
+            DeleteAllGroceriesButton.enabled = false
+        }
         
+
+        
+    }
+    @IBAction func deleteAllGroceries(sender: UIBarButtonItem) {
+        
+        // put in confirmation here!
+      
+
         deleteAllIngredientsAndUpdateUI()
         
+        
+        EditGroceryListButton.title = "Edit"
+        DeleteAllGroceriesButton.tintColor = UIColor.clearColor()
+        DeleteAllGroceriesButton.enabled = false
+
     }
     
 }

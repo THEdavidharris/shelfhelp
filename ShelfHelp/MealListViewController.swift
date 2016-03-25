@@ -14,6 +14,7 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
     // MARK: Attributes
     
     @IBOutlet weak var mealTable: UITableView!
+    @IBOutlet weak var deleteAllMealsButton: UIBarButtonItem!
     
     // MARK: Variables
     var recipeList: Results<Recipe>!
@@ -29,7 +30,8 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        deleteAllMealsButton.tintColor = UIColor.clearColor()
+        deleteAllMealsButton.enabled = false
         mealTable.delegate = self
         mealTable.dataSource = self
         
@@ -136,7 +138,29 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func editMealList(sender: UIBarButtonItem) {
         print("Edit meal pushed")
-        deleteAllRecipesAndUpdateUI()
+        self.mealTable.editing = !self.mealTable.editing
+        if (editMealListButton.title == "Edit"){
+            editMealListButton.title = "Cancel"
+            deleteAllMealsButton.tintColor = UIColor.redColor()
+            deleteAllMealsButton.enabled = true
+        } else {
+            editMealListButton.title = "Edit"
+            deleteAllMealsButton.tintColor = UIColor.clearColor()
+            deleteAllMealsButton.enabled = false
+        }
     }
+    @IBAction func deleteAllMeals(sender: UIBarButtonItem) {
+        
+        // put in confirmation here!
+        deleteAllRecipesAndUpdateUI()
+        
+        
+        editMealListButton.title = "Edit"
+        deleteAllMealsButton.tintColor = UIColor.clearColor()
+        deleteAllMealsButton.enabled = false
+
+    }
+    
+    
 }
 
