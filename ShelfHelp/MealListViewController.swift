@@ -18,6 +18,7 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
     // MARK: Variables
     var recipeList: Results<Recipe>!
     
+    @IBOutlet weak var editMealListButton: UIBarButtonItem!
     
     // MARK: View Life Cycle
     
@@ -129,6 +130,13 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
                 success(data)
             }
         })
+    }
+    
+    // MARK: Actions
+    
+    @IBAction func editMealList(sender: UIBarButtonItem) {
+        print("Edit meal pushed")
+        deleteAllRecipesAndUpdateUI()
     }
 }
 

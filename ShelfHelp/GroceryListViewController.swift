@@ -13,6 +13,7 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: Attributes
     
+    @IBOutlet weak var EditGroceryListButton: UIBarButtonItem!
     @IBOutlet weak var groceryTable: UITableView!
     @IBOutlet weak var segmentedController: UISegmentedControl!
     
@@ -175,5 +176,13 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
         
         self.groceryTable.reloadData()
     }
+    
+    @IBAction func editGroceryList(sender: UIBarButtonItem) {
+        print("Edit groceries pushed")
+        
+        deleteAllIngredientsAndUpdateUI()
+        
+    }
+    
 }
 
