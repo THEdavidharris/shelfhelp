@@ -198,7 +198,7 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     }
     @IBAction func deleteAllGroceries(sender: UIBarButtonItem) {
         
-        let confirmAlert = UIAlertController(title: "Delete all", message: "Are you sure to delete this list? ", preferredStyle: UIAlertControllerStyle.Alert)
+        let confirmAlert = UIAlertController(title: "Delete all", message: "Are you sure you want to delete this list? ", preferredStyle: UIAlertControllerStyle.Alert)
         
         confirmAlert.addAction(UIAlertAction(title: "Confirm", style: .Default, handler: { (action: UIAlertAction!) in
             self.navigationController?.popToRootViewControllerAnimated(true)
