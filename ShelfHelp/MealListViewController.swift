@@ -152,12 +152,29 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func deleteAllMeals(sender: UIBarButtonItem) {
         
         // put in confirmation here!
-        deleteAllRecipesAndUpdateUI()
         
         
-        editMealListButton.title = "Edit"
-        deleteAllMealsButton.tintColor = UIColor.clearColor()
-        deleteAllMealsButton.enabled = false
+        
+        let confirmAlert = UIAlertController(title: "Delete all", message: "Are you sure to delete this list? ", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        confirmAlert.addAction(UIAlertAction(title: "Confirm", style: .Default, handler: { (action: UIAlertAction!) in
+            self.navigationController?.popToRootViewControllerAnimated(true)
+            self.deleteAllRecipesAndUpdateUI()
+            self.editMealListButton.title = "Edit"
+            self.deleteAllMealsButton.tintColor = UIColor.clearColor()
+            self.deleteAllMealsButton.enabled = false
+        }))
+        
+        confirmAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
+            confirmAlert .dismissViewControllerAnimated(true, completion: nil)
+            print ("CANCELED MEAL DELETE")
+            
+            
+        }))
+        
+        presentViewController(confirmAlert, animated: true, completion: nil)
+        
+
 
     }
     

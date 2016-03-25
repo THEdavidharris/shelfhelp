@@ -198,15 +198,27 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     }
     @IBAction func deleteAllGroceries(sender: UIBarButtonItem) {
         
-        // put in confirmation here!
-      
+        let confirmAlert = UIAlertController(title: "Delete all", message: "Are you sure to delete this list? ", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        confirmAlert.addAction(UIAlertAction(title: "Confirm", style: .Default, handler: { (action: UIAlertAction!) in
+            self.navigationController?.popToRootViewControllerAnimated(true)
+            self.deleteAllIngredientsAndUpdateUI()
+            self.EditGroceryListButton.title = "Edit"
+            self.DeleteAllGroceriesButton.tintColor = UIColor.clearColor()
+            self.DeleteAllGroceriesButton.enabled = false
+        }))
+        
+        confirmAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in
+            confirmAlert .dismissViewControllerAnimated(true, completion: nil)
+            print ("CANCELED GROCERIES DELETE")
+            
+            
+        }))
+        
+        presentViewController(confirmAlert, animated: true, completion: nil)
 
-        deleteAllIngredientsAndUpdateUI()
-        
-        
-        EditGroceryListButton.title = "Edit"
-        DeleteAllGroceriesButton.tintColor = UIColor.clearColor()
-        DeleteAllGroceriesButton.enabled = false
+
+
 
     }
     
