@@ -10,6 +10,7 @@
   * Add individual items
   * Edit button that will slide all cells to allow for editing
   * Table animation on delete cell
+  * Re-implement ingredient stacking
 * Meal List Screen
   * Make it prettier (bigger cells and pictures)
   * Fix bug where clicking on meal doesn't set picture
