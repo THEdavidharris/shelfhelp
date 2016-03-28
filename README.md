@@ -37,7 +37,9 @@
   * Make top bar design
   * Get mockups from Max that will help
 * General
-  * Method to retrieve images is deprecated, switch to Kingfisher Library to get images from URL 
+  * Method to retrieve images is deprecated, switch to Kingfisher Library to get images from URL
+  * Use Realm Notifications handling to update data for screens before the willAppear() method might improve performance
+  * Background threading of changing object properties in Realm?
 * Bugs
   * ~~Deleting an ingredient deletes it from the meal screen too~~
   * Recipe screen from saved recipes needs to retrieve the image from the right URL
