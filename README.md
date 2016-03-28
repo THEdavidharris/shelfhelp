@@ -35,6 +35,8 @@
   * Add launch screen
   * Make top bar design
   * Get mockups from Max that will help
+* General
+  * Method to retrieve images is deprecated, switch to Kingfisher Library to get images from URL 
 * Bugs
   * ~~Deleting an ingredient deletes it from the meal screen too~~
   * Recipe screen from saved recipes needs to retrieve the image from the right URL
