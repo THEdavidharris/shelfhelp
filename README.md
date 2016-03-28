@@ -25,6 +25,10 @@
   * Put the whole screen in a scroll view
   * Make prettier, the button is weird
   * Get rid of the box that says ingredients and make it a table section header
+  * 
+  
+Helpful Links
+http://stackoverflow.com/questions/29672666/swift-how-to-delete-with-edit-button-and-deactivate-swipe-to-delete
 * API Transition to Food2Fork Changes
   * Change the Recipe Fetcher class to new URL and response
   * Change all the models so that they reflect the new JSON data structure
