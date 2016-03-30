@@ -6,10 +6,11 @@ use_frameworks!
 xcodeproj 'ShelfHelp.xcodeproj'
 
 target 'ShelfHelp' do
-    pod 'AlamofireObjectMapper', '~> 2.1'
-    pod 'Alamofire', '~>3.0'
-    pod 'ObjectMapper', '~>1.1'
-	pod 'RealmSwift'
+    pod 'AlamofireObjectMapper', '~> 2.1.2'
+    pod 'Alamofire', '~>3.2.0'
+    pod 'ObjectMapper', '~>1.1.5'
+    pod 'RealmSwift'
+    pod 'Kingfisher', '~> 2.1.0'
 end
 
 target 'ShelfHelpTests' do

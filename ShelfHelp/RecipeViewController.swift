@@ -41,7 +41,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         
         self.recipeTitle.text = recipe.label
-        self.recipeImage.image = recipe.image
+        self.recipeImage.kf_setImageWithURL(NSURL(string: recipe.imageURL)!)
         
         
         if let recipeSource = self.recipe?.source{

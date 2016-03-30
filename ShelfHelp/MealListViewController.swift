@@ -89,12 +89,7 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MealTableViewCell
         let meal = recipeList[indexPath.row]
         
-        requestImage(NSURL(string: meal.imageURL)!) { (image) -> Void in
-            let myImage = image
-            meal.image = myImage
-            cell.photoImageView.image = myImage
-        }
-        
+        cell.photoImageView.kf_setImageWithURL(NSURL(string: meal.imageURL)!)
         cell.mealLabel.text = meal.label
         
         return cell
@@ -112,26 +107,6 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
             self.readRecipesAndUpdateUI()
             
         }
-    }
-    
-    // MARK: Image Request Handling
-    
-    func requestImage(url: NSURL, success: (UIImage?) -> Void){
-        requestURL(url, success: { (data) -> Void in
-            if let d = data {
-                success(UIImage(data: d))
-            }
-        })
-    }
-    
-    func requestURL(url: NSURL, success: (NSData?) -> Void, error: ((NSError) -> Void)? = nil){
-        NSURLConnection.sendAsynchronousRequest(NSURLRequest(URL: url), queue: NSOperationQueue.mainQueue(), completionHandler: { response, data, err in
-            if let e = err{
-                error?(e)
-            } else {
-                success(data)
-            }
-        })
     }
     
     // MARK: Actions

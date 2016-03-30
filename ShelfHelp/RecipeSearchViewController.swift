@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
 
@@ -102,25 +103,7 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
             return
         }
     }
-    
-    func requestImage(url: NSURL, success: (UIImage?) -> Void){
-        requestURL(url, success: { (data) -> Void in
-            if let d = data {
-                success(UIImage(data: d))
-            }
-        })
-    }
-    
-    func requestURL(url: NSURL, success: (NSData?) -> Void, error: ((NSError) -> Void)? = nil){
-        NSURLConnection.sendAsynchronousRequest(NSURLRequest(URL: url), queue: NSOperationQueue.mainQueue(), completionHandler: { response, data, err in
-            if let e = err{
-                error?(e)
-            } else {
-                success(data)
-            }
-        })
-    }
-    
+        
     
     // MARK: UITableViewDelegate
     
@@ -141,13 +124,9 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
         let recipe = fetchedRecipes[indexPath.row]
         cell.recipeName.text = recipe.label
         
-        requestImage(NSURL(string: recipe.imageURL)!) { (image) -> Void in
-            let myImage = image
-            recipe.image = myImage
-            cell.recipeImage.image = myImage
-        }
-        
+        cell.recipeImage.kf_setImageWithURL(NSURL(string: recipe.imageURL)!)
         return cell
+        
     }
     
 }

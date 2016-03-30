@@ -25,17 +25,8 @@ class Recipe: Object, Mappable {
     // DO NOT DELETE ITEMS FROM THIS
     let staticIngredients = List<RLMString>()
     
-    
-    
-    // Non-stored properties
-    dynamic var image: UIImage?
-    
     required convenience init?(_ map: Map){
         self.init()
-    }
-    
-    override static func ignoredProperties() -> [String] {
-        return ["image"]
     }
     
     override static func primaryKey() -> String {
