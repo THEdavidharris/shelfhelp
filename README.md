@@ -5,10 +5,12 @@
   * ~~Sort by meal and alphabetical by ingredient using the segment controller~~
   * Fix the gap between segment controller and table
   * Mark as bought and do more than just check it
-  * Delete all
+  * ~~Delete all~~
+    * Better location for the button maybe? 
   * Delete bought items
   * Add individual items
-  * Edit button that will slide all cells to allow for editing
+  * ~~Edit button that will slide all cells to allow for editing~~
+    * Design for that 
   * Table animation on delete cell
   * Re-implement ingredient stacking
 * Meal List Screen
@@ -46,6 +48,6 @@ http://stackoverflow.com/questions/29672666/swift-how-to-delete-with-edit-button
   * Background threading of changing object properties in Realm?
 * Bugs
   * ~~Deleting an ingredient deletes it from the meal screen too~~
-  * Recipe screen from saved recipes needs to retrieve the image from the right URL
+  * ~~Recipe screen from saved recipes needs to retrieve the image from the right URL~~
 
 
