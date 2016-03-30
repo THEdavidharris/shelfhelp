@@ -20,6 +20,8 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var addMealButton: UIBarButtonItem!
     @IBOutlet weak var goToRecipeButton: UIButton!
     
+    @IBOutlet weak var tableHeader: UIView!
+    
     // MARK: Variables
     var recipe: Recipe!
     
@@ -31,7 +33,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Do any additional setup after loading the view.
         ingredientTable.delegate = self
         ingredientTable.dataSource = self
-        
+        self.ingredientTable.tableHeaderView = self.tableHeader
         
         // Hide the navbar and tabbar
         self.navigationController?.navigationBar.hidden = false
