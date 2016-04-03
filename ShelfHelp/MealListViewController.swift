@@ -77,7 +77,18 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         mealTable.rowHeight = UITableViewAutomaticDimension
         mealTable.estimatedRowHeight = 160.0
-        return 1
+        if(recipeList.count == 0){
+            var noDataLabel: UILabel = UILabel(frame: CGRectMake(0, 0, self.tableView.bounds.size.width, self.tableView.bounds.size.height))
+            noDataLabel.text = "No saved recipes"
+            noDataLabel.textColor = UIColor(red: 22.0/255.0, green: 106.0/255.0, blue: 176.0/255.0, alpha: 1.0)
+            noDataLabel.textAlignment = NSTextAlignment.Center
+            mealTable.backgroundView = noDataLabel
+            return 0            
+        }
+        else{
+            mealTable.backgroundView = nil
+            return 1
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
