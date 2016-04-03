@@ -135,6 +135,7 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
             deleteAllMealsButton.enabled = false
         }
     }
+    
     @IBAction func deleteAllMeals(sender: UIBarButtonItem) {
         
         // put in confirmation here!

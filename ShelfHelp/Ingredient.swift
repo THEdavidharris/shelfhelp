@@ -19,6 +19,8 @@ class Ingredient: Object, Mappable, Hashable {
     dynamic var checked = false
     dynamic var compoundKey = ""
     
+    dynamic var nameAndUnitString = ""
+    
     dynamic var recipeName = ""
     
     func setCompoundKey(){
@@ -38,6 +40,8 @@ class Ingredient: Object, Mappable, Hashable {
         quantity <- map["quantity"]
         unit <- map["measure.label"]
         name <- map["food.label"]
+        
+        nameAndUnitString = name + unit
     }
 
 }

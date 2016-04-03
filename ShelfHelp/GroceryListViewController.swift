@@ -21,6 +21,7 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: Variables
     var mealList: Results<Recipe>!
     var ingredientList: Results<Ingredient>!
+    var ingredientDictionary = [String:Ingredient]() 
     
     var sectionedTable: Bool = false
     
@@ -63,7 +64,7 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
         }
         self.groceryTable.reloadData()
     }
-    
+        
     // MARK: UITableViewDelegate
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -216,11 +217,22 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
         }))
         
         presentViewController(confirmAlert, animated: true, completion: nil)
-
-
-
-
     }
     
+    
+    // MARK: Helpers
+    
+    func stackGroceryListItems(){
+        for item in ingredientList {
+            // If the same name and unit are in the list
+            if ingredientDictionary[item.nameAndUnitString] == nil {
+                ingredientDictionary[item.nameAndUnitString] = item
+            }
+            else{
+                // Add the amounts              
+                ingredientDictionary[item.nameAndUnitString] = ingredientDictionary[item.nameAndUnitString].quantity + item.quantity
+            }
+        }
+    }
 }
 
