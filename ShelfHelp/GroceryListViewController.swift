@@ -232,6 +232,10 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: Helpers
     
     func stackGroceryListItems(){
+        
+        // NOTE: THIS WON'T WORK BECAUSE IT MODIFIES REALM OBJECTS
+        // TODO: Create new "Grocery Item" class that is NOT a realm object such that it
+        // can be modified outside of the database.
         for item in ingredientList {
             // If the same name and unit are in the list
             if ingredientDictionary[item.nameAndUnitString] == nil {
@@ -243,6 +247,8 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
                 ingredientDictionary[item.nameAndUnitString]?.quantity = amount + item.quantity
             }
         }
+        
+        return
     }
 }
 
