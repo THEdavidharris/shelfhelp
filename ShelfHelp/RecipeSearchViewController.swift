@@ -109,7 +109,7 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         if(fetchedRecipes.count == 0){
-            var noDataLabel: UILabel = UILabel(frame: CGRectMake(0, 0, self.tableView.bounds.size.width, self.tableView.bounds.size.height))
+            let noDataLabel: UILabel = UILabel(frame: CGRectMake(0, 0, recipeTable.bounds.size.width, recipeTable.bounds.size.height))
             noDataLabel.text = "Use the search bar to find recipes"
             noDataLabel.textColor = UIColor(red: 22.0/255.0, green: 106.0/255.0, blue: 176.0/255.0, alpha: 1.0)
             noDataLabel.textAlignment = NSTextAlignment.Center
@@ -124,6 +124,10 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fetchedRecipes.count
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Ingredients"
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

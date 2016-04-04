@@ -129,13 +129,22 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete{
-            let ingredientVictim = self.mealList[indexPath.section].ingredientArray[indexPath.row]
-            let realm = try! Realm()
-            try! realm.write {
-                realm.delete(ingredientVictim)
+            
+            let ingredientVictim: Ingredient!
+            if(sectionedTable){
+                ingredientVictim = self.mealList[indexPath.section].ingredientArray[indexPath.row]
+            }
+            else{
+                ingredientVictim = self.ingredientList[indexPath.row]
             }
             
             //tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            let realm = try! Realm()
+            try! realm.write {
+                realm.delete(ingredientVictim)
+            }            
+            
+            
             self.groceryTable.reloadData()
             
         }
@@ -229,8 +238,9 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
                 ingredientDictionary[item.nameAndUnitString] = item
             }
             else{
-                // Add the amounts              
-                ingredientDictionary[item.nameAndUnitString] = ingredientDictionary[item.nameAndUnitString].quantity + item.quantity
+                // Add the amounts
+                let amount = ingredientDictionary[item.nameAndUnitString]!.quantity
+                ingredientDictionary[item.nameAndUnitString]?.quantity = amount + item.quantity
             }
         }
     }
