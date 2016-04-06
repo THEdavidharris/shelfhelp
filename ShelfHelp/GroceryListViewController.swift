@@ -38,6 +38,9 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
         groceryTable.dataSource = self
         DeleteAllGroceriesButton.tintColor = UIColor.clearColor()
         DeleteAllGroceriesButton.enabled = false
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Lobster 1.4", size: 24)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
         retrieveElementsAndUpdateUI()
     }
     

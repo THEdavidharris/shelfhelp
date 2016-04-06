@@ -25,7 +25,6 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.hidden = true
     }
     
     override func viewDidLoad() {
@@ -34,8 +33,9 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
         searchBar.delegate = self
         recipeTable.delegate = self
         recipeTable.dataSource = self
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Lobster 1.4", size: 24)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
 
-        self.navigationController?.navigationBar.hidden = true
     }
     
     
@@ -124,10 +124,6 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fetchedRecipes.count
-    }
-    
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Ingredients"
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

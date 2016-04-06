@@ -19,6 +19,7 @@
 		2C3DC6E11C764E6A007C185F /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3DC6E01C764E6A007C185F /* Ingredient.swift */; };
 		2C6CDFE01C7784DB00AE8915 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3DC6E01C764E6A007C185F /* Ingredient.swift */; };
 		2C772E2F1C7A541C004624DB /* FetchedRecipeViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C772E2E1C7A541C004624DB /* FetchedRecipeViewCellTableViewCell.swift */; };
+		2CB5386D1CB49509002546D5 /* Lobster_1.4.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2CB5386C1CB49509002546D5 /* Lobster_1.4.otf */; };
 		2CBEB1451C8D01260092A7CC /* RecipeIngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBB66381C8CC44500EE0E9F /* RecipeIngredientTableViewCell.swift */; };
 		2CBEB1461C8D012A0092A7CC /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE45D921C755F6200F7DB5F /* MealTableViewCell.swift */; };
 		2CCFC06A1C8E779B0098964E /* MealListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4237B61C7545A60092E949 /* MealListViewController.swift */; };
@@ -54,6 +55,7 @@
 		2C3DC6DD1C764B74007C185F /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		2C3DC6E01C764E6A007C185F /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		2C772E2E1C7A541C004624DB /* FetchedRecipeViewCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedRecipeViewCellTableViewCell.swift; sourceTree = "<group>"; };
+		2CB5386C1CB49509002546D5 /* Lobster_1.4.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Lobster_1.4.otf; path = ShelfHelp/Lobster_1.4.otf; sourceTree = "<group>"; };
 		2CE12C221C7C0BE300209052 /* RecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		73B4FA4D4DA20CA82D04E74C /* Pods-ShelfHelp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShelfHelp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShelfHelp/Pods-ShelfHelp.debug.xcconfig"; sourceTree = "<group>"; };
 		A47DB37459582D6CECA7B8A9 /* Pods_ShelfHelp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShelfHelp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2CB538661CB492C1002546D5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2CB5386C1CB49509002546D5 /* Lobster_1.4.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		2CB74B6A1CA44463008C412A /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +165,7 @@
 		FF4237A61C7545A60092E949 = {
 			isa = PBXGroup;
 			children = (
+				2CB538661CB492C1002546D5 /* Resources */,
 				FF4237B11C7545A60092E949 /* ShelfHelp */,
 				FF4237C81C7545A60092E949 /* ShelfHelpTests */,
 				FF4237B01C7545A60092E949 /* Products */,
@@ -284,6 +295,7 @@
 			files = (
 				FF4237BF1C7545A60092E949 /* LaunchScreen.storyboard in Resources */,
 				FF4237BC1C7545A60092E949 /* Assets.xcassets in Resources */,
+				2CB5386D1CB49509002546D5 /* Lobster_1.4.otf in Resources */,
 				FF4237BA1C7545A60092E949 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
