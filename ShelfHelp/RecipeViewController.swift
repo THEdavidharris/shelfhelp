@@ -1,3 +1,4 @@
+
 //
 //  RecipeViewController.swift
 //  ShelfHelp
@@ -35,6 +36,8 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         ingredientTable.dataSource = self
         self.ingredientTable.tableHeaderView = self.tableHeader
         
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
         // Hide the navbar and tabbar
         self.navigationController?.navigationBar.hidden = false
         self.tabBarController?.hidesBottomBarWhenPushed = true
@@ -42,6 +45,13 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.recipeTitle.text = recipe.label
         self.recipeImage.kf_setImageWithURL(NSURL(string: recipe.imageURL)!)
+        
+        let realm = try! Realm()
+        if realm.objectForPrimaryKey(Recipe.self, key: (self.recipe?.uuid)!) != nil{
+            addMealButton.enabled = false
+            addMealButton.tintColor = UIColor.clearColor()
+        }
+        
         
         
         if let recipeSource = self.recipe?.source{
@@ -91,17 +101,16 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @IBAction func addMealToList(sender: UIBarButtonItem) {
-        
-        for item in self.recipe!.ingredientArray {
-            item.recipeName = self.recipe!.label
-            item.setCompoundKey()
-        }
                 
         // Get the default Realm
         let realm = try! Realm()
         
         // Add to the Realm inside a transaction
         try! realm.write {
+            for item in self.recipe!.ingredientArray {
+                item.recipeName = self.recipe!.label
+                item.setCompoundKey()
+            }
             realm.add(self.recipe!)
         }
         

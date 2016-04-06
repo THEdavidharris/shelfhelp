@@ -21,7 +21,7 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: Variables
     var mealList: Results<Recipe>!
     var ingredientList: Results<Ingredient>!
-    var ingredientDictionary = [String:Ingredient]() 
+    var ingredientDictionary = [String:Ingredient]()
     
     var sectionedTable: Bool = false
     
@@ -40,7 +40,7 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
         DeleteAllGroceriesButton.enabled = false
         
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Lobster 1.4", size: 24)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
-        
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         retrieveElementsAndUpdateUI()
     }
     
@@ -198,12 +198,14 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
         self.groceryTable.editing = !self.groceryTable.editing
         if (EditGroceryListButton.title == "Edit"){
             EditGroceryListButton.title = "Cancel"
+
             DeleteAllGroceriesButton.tintColor = UIColor.redColor()
             DeleteAllGroceriesButton.enabled = true
         } else {
             EditGroceryListButton.title = "Edit"
             DeleteAllGroceriesButton.tintColor = UIColor.clearColor()
             DeleteAllGroceriesButton.enabled = false
+
         }
         
 
@@ -219,6 +221,7 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
             self.EditGroceryListButton.title = "Edit"
             self.DeleteAllGroceriesButton.tintColor = UIColor.clearColor()
             self.DeleteAllGroceriesButton.enabled = false
+
         }))
         
         confirmAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in

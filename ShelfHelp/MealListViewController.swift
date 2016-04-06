@@ -36,7 +36,7 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
         mealTable.dataSource = self
         
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Lobster 1.4", size: 24)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
-        
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
     }
     
     override func didReceiveMemoryWarning() {
@@ -105,6 +105,13 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
         cell.photoImageView.kf_setImageWithURL(NSURL(string: meal.imageURL)!)
         cell.mealLabel.text = meal.label
         
+        cell.photoImageView.layer.shadowOffset = CGSizeMake(0, 0)
+        cell.photoImageView.layer.shadowColor = UIColor.blackColor().CGColor
+        cell.photoImageView.layer.shadowRadius = 4
+        cell.photoImageView.layer.shadowOpacity = 0.25
+        cell.photoImageView.layer.masksToBounds = false;
+        cell.photoImageView.clipsToBounds = true;
+        
         return cell
     }
     
@@ -116,7 +123,7 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
                 realm.delete(recipeVictim)
             }
             
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            //tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
             
             mealTable.reloadData()
             
@@ -153,6 +160,7 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
             self.editMealListButton.title = "Edit"
             self.deleteAllMealsButton.tintColor = UIColor.clearColor()
             self.deleteAllMealsButton.enabled = false
+            self.mealTable.reloadData()
         }))
         
         confirmAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (action: UIAlertAction!) in

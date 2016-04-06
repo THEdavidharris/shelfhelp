@@ -36,6 +36,7 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
         
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Lobster 1.4", size: 24)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
 
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
     }
     
     
@@ -136,6 +137,14 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
         cell.recipeName.text = recipe.label
         
         cell.recipeImage.kf_setImageWithURL(NSURL(string: recipe.imageURL)!)
+        
+        
+        cell.recipeImage.layer.shadowOffset = CGSizeMake(0, 0)
+        cell.recipeImage.layer.shadowColor = UIColor.blackColor().CGColor
+        cell.recipeImage.layer.shadowRadius = 4
+        cell.recipeImage.layer.shadowOpacity = 0.25
+        cell.recipeImage.layer.masksToBounds = false;
+        cell.recipeImage.clipsToBounds = true;
         return cell
         
     }

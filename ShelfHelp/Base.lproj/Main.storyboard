@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Groceries-->
@@ -96,20 +95,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ShelfHelp" id="NdB-ne-kNW">
-                        <leftBarButtonItems>
-                            <barButtonItem title="Edit" id="28h-lO-V6k">
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <action selector="editGroceryList:" destination="9pv-A4-QxB" id="JhG-VY-y56"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Delete All" id="AQx-mL-gph">
-                                <connections>
-                                    <action selector="deleteAllGroceries:" destination="9pv-A4-QxB" id="wgF-I1-yIr"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" image="addLight" id="0V4-KV-Zp3"/>
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="28h-lO-V6k">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="editGroceryList:" destination="9pv-A4-QxB" id="JhG-VY-y56"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Delete All" id="AQx-mL-gph">
+                            <connections>
+                                <action selector="deleteAllGroceries:" destination="9pv-A4-QxB" id="wgF-I1-yIr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="DeleteAllGroceriesButton" destination="AQx-mL-gph" id="zH6-ix-VeQ"/>
@@ -141,9 +137,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="370" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ucy-55-eFq">
                                 <rect key="frame" x="0.0" y="108" width="375" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="510" id="f0d-O5-8HT"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FetchedRecipeTableCell" rowHeight="370" id="2HJ-VY-uy8" customClass="FetchedRecipeViewCellTableViewCell" customModule="ShelfHelp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="370"/>
@@ -188,15 +181,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BJK-9n-2uq" firstAttribute="leading" secondItem="l3M-59-eLZ" secondAttribute="leading" id="6h3-5O-kKG"/>
-                            <constraint firstAttribute="trailing" secondItem="BJK-9n-2uq" secondAttribute="trailing" id="aVL-CA-rth"/>
-                            <constraint firstItem="BJK-9n-2uq" firstAttribute="leading" secondItem="ucy-55-eFq" secondAttribute="leading" id="fnK-vs-ePk"/>
-                            <constraint firstItem="BJK-9n-2uq" firstAttribute="top" secondItem="3ux-PC-m7y" secondAttribute="bottom" id="iAV-UL-YDC"/>
-                            <constraint firstItem="ucy-55-eFq" firstAttribute="bottom" secondItem="dcV-A3-sA3" secondAttribute="top" id="j0Q-fa-hr3"/>
-                            <constraint firstItem="BJK-9n-2uq" firstAttribute="trailing" secondItem="ucy-55-eFq" secondAttribute="trailing" id="mvu-3Y-emy"/>
+                            <constraint firstItem="BJK-9n-2uq" firstAttribute="top" secondItem="3ux-PC-m7y" secondAttribute="bottom" id="5J8-61-qg6"/>
+                            <constraint firstItem="BJK-9n-2uq" firstAttribute="leading" secondItem="l3M-59-eLZ" secondAttribute="leading" id="BvN-TC-3K5"/>
+                            <constraint firstItem="ucy-55-eFq" firstAttribute="bottom" secondItem="dcV-A3-sA3" secondAttribute="top" id="L0E-cc-dcf"/>
+                            <constraint firstItem="ucy-55-eFq" firstAttribute="trailing" secondItem="BJK-9n-2uq" secondAttribute="trailing" id="PmN-GW-hb4"/>
+                            <constraint firstItem="ucy-55-eFq" firstAttribute="leading" secondItem="BJK-9n-2uq" secondAttribute="leading" id="dBm-B3-U0K"/>
+                            <constraint firstItem="ucy-55-eFq" firstAttribute="top" secondItem="BJK-9n-2uq" secondAttribute="bottom" id="evL-Zt-a45"/>
+                            <constraint firstAttribute="trailing" secondItem="BJK-9n-2uq" secondAttribute="trailing" id="fZ0-TA-glC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="ShelfHelp" id="gXT-RL-XXn"/>
+                    <navigationItem key="navigationItem" title="ShelfHelp" id="gXT-RL-XXn">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="3Hh-nr-XE9"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="recipeTable" destination="ucy-55-eFq" id="uDk-cY-kP0"/>
@@ -216,41 +212,46 @@
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="109" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q0Q-kM-gVg">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" selectionStyle="default" indentationWidth="10" reuseIdentifier="MealTableCell" rowHeight="109" id="uDb-s5-CwP" customClass="MealTableViewCell" customModule="ShelfHelp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="109"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" selectionStyle="default" indentationWidth="10" reuseIdentifier="MealTableCell" rowHeight="370" id="uDb-s5-CwP" customClass="MealTableViewCell" customModule="ShelfHelp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="370"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uDb-s5-CwP" id="pye-zM-FOV">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="108"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="369"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iR-Pr-Xtl">
-                                                    <rect key="frame" x="127" y="17" width="448" height="73"/>
+                                                    <rect key="frame" x="8" y="8" width="359" height="27"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ni3-0H-nOG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="113" height="108"/>
+                                                    <rect key="frame" x="8" y="35" width="359" height="326"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="113" id="Ddg-UU-AQ6"/>
+                                                        <constraint firstAttribute="width" constant="359" id="Ddg-UU-AQ6"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="0iR-Pr-Xtl" secondAttribute="trailing" constant="17" id="Jf3-vh-ehY"/>
-                                                <constraint firstItem="0iR-Pr-Xtl" firstAttribute="centerY" secondItem="ni3-0H-nOG" secondAttribute="centerY" id="Wra-An-oGL"/>
-                                                <constraint firstAttribute="bottom" secondItem="ni3-0H-nOG" secondAttribute="bottom" id="XAH-iG-tG8"/>
-                                                <constraint firstItem="0iR-Pr-Xtl" firstAttribute="leading" secondItem="ni3-0H-nOG" secondAttribute="trailing" constant="14" id="hEZ-Ob-8V6"/>
-                                                <constraint firstItem="ni3-0H-nOG" firstAttribute="top" secondItem="pye-zM-FOV" secondAttribute="top" id="k89-L3-dOa"/>
-                                                <constraint firstItem="ni3-0H-nOG" firstAttribute="leading" secondItem="pye-zM-FOV" secondAttribute="leading" id="mxt-37-bP4"/>
-                                                <constraint firstItem="0iR-Pr-Xtl" firstAttribute="top" secondItem="pye-zM-FOV" secondAttribute="topMargin" constant="9" id="mzr-pX-Nrp"/>
+                                                <constraint firstItem="ni3-0H-nOG" firstAttribute="bottom" secondItem="pye-zM-FOV" secondAttribute="bottomMargin" id="H5R-54-hMQ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="0iR-Pr-Xtl" secondAttribute="trailing" id="Jf3-vh-ehY"/>
+                                                <constraint firstItem="ni3-0H-nOG" firstAttribute="trailing" secondItem="pye-zM-FOV" secondAttribute="trailingMargin" id="Mkn-Y7-GxI"/>
+                                                <constraint firstItem="0iR-Pr-Xtl" firstAttribute="centerY" secondItem="ni3-0H-nOG" secondAttribute="centerY" constant="-176.5" id="Wra-An-oGL"/>
+                                                <constraint firstAttribute="bottom" secondItem="ni3-0H-nOG" secondAttribute="bottom" constant="8" id="XAH-iG-tG8"/>
+                                                <constraint firstItem="0iR-Pr-Xtl" firstAttribute="leading" secondItem="ni3-0H-nOG" secondAttribute="trailing" constant="-359" id="hEZ-Ob-8V6"/>
+                                                <constraint firstItem="ni3-0H-nOG" firstAttribute="top" secondItem="0iR-Pr-Xtl" secondAttribute="bottom" id="i7m-rc-TqK"/>
+                                                <constraint firstItem="ni3-0H-nOG" firstAttribute="top" secondItem="pye-zM-FOV" secondAttribute="top" constant="35" id="k89-L3-dOa"/>
+                                                <constraint firstItem="ni3-0H-nOG" firstAttribute="leading" secondItem="pye-zM-FOV" secondAttribute="leading" constant="8" id="mxt-37-bP4"/>
+                                                <constraint firstItem="0iR-Pr-Xtl" firstAttribute="top" secondItem="pye-zM-FOV" secondAttribute="topMargin" id="mzr-pX-Nrp"/>
+                                                <constraint firstItem="ni3-0H-nOG" firstAttribute="leading" secondItem="pye-zM-FOV" secondAttribute="leadingMargin" id="sKQ-b8-OaC"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -271,20 +272,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ShelfHelp" id="jrF-Pe-FxL">
-                        <leftBarButtonItems>
-                            <barButtonItem title="Edit" id="luD-Vx-AiD">
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <action selector="editMealList:" destination="8rJ-Kc-sve" id="zU0-qn-EWH"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Delete All" id="XU6-TT-KBi">
-                                <connections>
-                                    <action selector="deleteAllMeals:" destination="8rJ-Kc-sve" id="Ir5-7G-MGJ"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="1m3-7i-dvw"/>
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="luD-Vx-AiD">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="editMealList:" destination="8rJ-Kc-sve" id="zU0-qn-EWH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Delete All" id="XU6-TT-KBi">
+                            <connections>
+                                <action selector="deleteAllMeals:" destination="8rJ-Kc-sve" id="Ir5-7G-MGJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="deleteAllMealsButton" destination="XU6-TT-KBi" id="MJ1-Sa-N2V"/>
                         <outlet property="editMealListButton" destination="luD-Vx-AiD" id="m3f-mA-uCo"/>
@@ -293,7 +294,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1378" y="232"/>
+            <point key="canvasLocation" x="1377.5" y="231.5"/>
         </scene>
         <!--Recipe-->
         <scene sceneID="RYJ-1R-wIP">
@@ -395,10 +396,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="ShelfHelp" id="pwL-cS-jN7">
-                        <barButtonItem key="backBarButtonItem" title="Custom Text" id="DXi-00-Gl5">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="DXi-00-Gl5">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="addLight" id="USE-1v-6bF">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="addMealToList:" destination="TbD-Jt-HsY" id="Wtg-MW-P5p"/>
                             </connections>
@@ -519,6 +521,6 @@
         <image name="mealListIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PNA-ap-xp8"/>
+        <segue reference="lNN-O7-yPT"/>
     </inferredMetricsTieBreakers>
 </document>
