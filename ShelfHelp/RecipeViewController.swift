@@ -44,6 +44,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         
         self.recipeTitle.text = recipe.label
+        recipeTitle.adjustsFontSizeToFitWidth = true
         self.recipeImage.kf_setImageWithURL(NSURL(string: recipe.imageURL)!)
         
         let realm = try! Realm()
@@ -52,10 +53,15 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
             addMealButton.tintColor = UIColor.clearColor()
         }
         
+        goToRecipeButton.layer.cornerRadius = 10
+        goToRecipeButton.layer.borderWidth = 1
+        goToRecipeButton.layer.borderColor = UIColor.blueColor().CGColor
+        goToRecipeButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        
         
         
         if let recipeSource = self.recipe?.source{
-            let sourceString = "View recipe at \(recipeSource)"
+            let sourceString = "View at \(recipeSource)"
             self.goToRecipeButton.setTitle(sourceString, forState: .Normal)
         }
         
@@ -91,7 +97,9 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Ingredients"
+    }
     
     // MARK: Actions
     
@@ -113,6 +121,9 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
             realm.add(self.recipe!)
         }
+        
+        addMealButton.enabled = false
+        addMealButton.tintColor = UIColor.clearColor()
         
         let alertController = UIAlertController(title: "Recipe added!", message: self.recipe!.label, preferredStyle: .Alert)
         self.presentViewController(alertController, animated: true, completion: nil)

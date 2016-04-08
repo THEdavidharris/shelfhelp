@@ -19,11 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
        // Uncomment to delete the Realm file
-        do {
-            try NSFileManager.defaultManager().removeItemAtPath(Realm.Configuration.defaultConfiguration.path!)
-        } catch let error as NSError {
-            print("An error occurred: \(error)")
-        }
+//        do {
+//            try NSFileManager.defaultManager().removeItemAtPath(Realm.Configuration.defaultConfiguration.path!)
+//        } catch let error as NSError {
+//            print("An error occurred: \(error)")
+//        }
         
         return true
     }
