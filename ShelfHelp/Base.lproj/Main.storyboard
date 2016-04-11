@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -244,6 +244,9 @@
                                                 <constraint firstItem="ni3-0H-nOG" firstAttribute="bottom" secondItem="pye-zM-FOV" secondAttribute="bottomMargin" id="H5R-54-hMQ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="0iR-Pr-Xtl" secondAttribute="trailing" id="Jf3-vh-ehY"/>
                                                 <constraint firstItem="ni3-0H-nOG" firstAttribute="trailing" secondItem="pye-zM-FOV" secondAttribute="trailingMargin" id="Mkn-Y7-GxI"/>
+                                                <constraint firstItem="0iR-Pr-Xtl" firstAttribute="trailing" secondItem="pye-zM-FOV" secondAttribute="trailingMargin" id="P29-Sb-SqN"/>
+                                                <constraint firstItem="0iR-Pr-Xtl" firstAttribute="leading" secondItem="pye-zM-FOV" secondAttribute="leadingMargin" id="Up1-RA-XfZ"/>
+                                                <constraint firstItem="ni3-0H-nOG" firstAttribute="top" secondItem="0iR-Pr-Xtl" secondAttribute="bottom" id="V1e-TX-HMc"/>
                                                 <constraint firstItem="0iR-Pr-Xtl" firstAttribute="centerY" secondItem="ni3-0H-nOG" secondAttribute="centerY" constant="-176.5" id="Wra-An-oGL"/>
                                                 <constraint firstAttribute="bottom" secondItem="ni3-0H-nOG" secondAttribute="bottom" constant="8" id="XAH-iG-tG8"/>
                                                 <constraint firstItem="0iR-Pr-Xtl" firstAttribute="leading" secondItem="ni3-0H-nOG" secondAttribute="trailing" constant="-359" id="hEZ-Ob-8V6"/>
@@ -251,6 +254,7 @@
                                                 <constraint firstItem="ni3-0H-nOG" firstAttribute="top" secondItem="pye-zM-FOV" secondAttribute="top" constant="35" id="k89-L3-dOa"/>
                                                 <constraint firstItem="ni3-0H-nOG" firstAttribute="leading" secondItem="pye-zM-FOV" secondAttribute="leading" constant="8" id="mxt-37-bP4"/>
                                                 <constraint firstItem="0iR-Pr-Xtl" firstAttribute="top" secondItem="pye-zM-FOV" secondAttribute="topMargin" id="mzr-pX-Nrp"/>
+                                                <constraint firstItem="0iR-Pr-Xtl" firstAttribute="top" secondItem="pye-zM-FOV" secondAttribute="topMargin" id="nPh-D1-mee"/>
                                                 <constraint firstItem="ni3-0H-nOG" firstAttribute="leading" secondItem="pye-zM-FOV" secondAttribute="leadingMargin" id="sKQ-b8-OaC"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -513,6 +517,6 @@
         <image name="mealListIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PNA-ap-xp8"/>
+        <segue reference="lNN-O7-yPT"/>
     </inferredMetricsTieBreakers>
 </document>
