@@ -119,6 +119,8 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
         if editingStyle == UITableViewCellEditingStyle.Delete{
             let recipeVictim = recipeList[indexPath.row]
             let realm = try! Realm()
+            for item in recipeVictim
+            
             try! realm.write {
                 realm.delete(recipeVictim)
             }

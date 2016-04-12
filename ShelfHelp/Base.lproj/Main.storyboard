@@ -319,19 +319,10 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zyq-Jt-Z1k">
                                             <rect key="frame" x="0.0" y="107" width="375" height="318"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cheeseburger with More Stuff" lineBreakMode="tailTruncation" numberOfLines="3" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCB-Zz-Zr9">
-                                            <rect key="frame" x="8" y="8" width="198" height="91"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="91" id="bTw-4p-7FB"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
-                                            <nil key="highlightedColor"/>
-                                            <size key="shadowOffset" width="-1" height="1"/>
-                                        </label>
                                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJ1-6b-fbb">
-                                            <rect key="frame" x="214" y="31" width="153" height="46"/>
+                                            <rect key="frame" x="214" y="27" width="153" height="46"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="153" id="XOI-4E-ZGf"/>
+                                                <constraint firstAttribute="width" constant="153" id="ld0-OT-dpt"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <state key="normal" title="View at AllRecipes"/>
@@ -339,19 +330,28 @@
                                                 <action selector="followLinkToRecipe:" destination="TbD-Jt-HsY" eventType="touchUpInside" id="CQY-vP-Y2z"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cheeseburger with More Stuff" lineBreakMode="tailTruncation" numberOfLines="3" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCB-Zz-Zr9">
+                                            <rect key="frame" x="8" y="13" width="198" height="73"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="73" id="YbD-bn-Si3"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="28"/>
+                                            <nil key="highlightedColor"/>
+                                            <size key="shadowOffset" width="-1" height="1"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="iCB-Zz-Zr9" firstAttribute="leading" secondItem="llJ-ep-xPl" secondAttribute="leadingMargin" id="50E-Uz-Pc1"/>
-                                        <constraint firstItem="iCB-Zz-Zr9" firstAttribute="top" secondItem="llJ-ep-xPl" secondAttribute="topMargin" id="ABa-Vs-QJM"/>
-                                        <constraint firstItem="xJ1-6b-fbb" firstAttribute="top" secondItem="llJ-ep-xPl" secondAttribute="top" constant="31" id="APW-jH-mqQ"/>
-                                        <constraint firstItem="Zyq-Jt-Z1k" firstAttribute="top" secondItem="iCB-Zz-Zr9" secondAttribute="bottom" constant="8" symbolic="YES" id="BdL-94-SUQ"/>
+                                        <constraint firstItem="iCB-Zz-Zr9" firstAttribute="top" secondItem="llJ-ep-xPl" secondAttribute="top" constant="13" id="0W1-c5-ePS"/>
+                                        <constraint firstItem="iCB-Zz-Zr9" firstAttribute="leading" secondItem="llJ-ep-xPl" secondAttribute="leadingMargin" id="4tw-l7-XIW"/>
+                                        <constraint firstItem="Zyq-Jt-Z1k" firstAttribute="top" secondItem="xJ1-6b-fbb" secondAttribute="bottom" constant="34" id="9fn-NG-4Vw"/>
                                         <constraint firstItem="Zyq-Jt-Z1k" firstAttribute="leading" secondItem="llJ-ep-xPl" secondAttribute="leading" id="C39-KL-vQ8"/>
                                         <constraint firstAttribute="trailing" secondItem="Zyq-Jt-Z1k" secondAttribute="trailing" id="CWR-5B-lt5"/>
-                                        <constraint firstItem="Zyq-Jt-Z1k" firstAttribute="top" secondItem="xJ1-6b-fbb" secondAttribute="bottom" constant="30" id="T4Q-cf-Qdj"/>
+                                        <constraint firstItem="xJ1-6b-fbb" firstAttribute="trailing" secondItem="llJ-ep-xPl" secondAttribute="trailingMargin" id="GVo-jY-zZW"/>
+                                        <constraint firstItem="iCB-Zz-Zr9" firstAttribute="centerY" secondItem="xJ1-6b-fbb" secondAttribute="centerY" id="M1B-XA-nLt"/>
+                                        <constraint firstItem="xJ1-6b-fbb" firstAttribute="leading" secondItem="iCB-Zz-Zr9" secondAttribute="trailing" constant="8" symbolic="YES" id="Ufp-YS-wEy"/>
                                         <constraint firstAttribute="bottom" secondItem="Zyq-Jt-Z1k" secondAttribute="bottom" id="W1c-6g-No1"/>
-                                        <constraint firstItem="xJ1-6b-fbb" firstAttribute="leading" secondItem="iCB-Zz-Zr9" secondAttribute="trailing" constant="8" symbolic="YES" id="XHa-Oo-r8i"/>
-                                        <constraint firstItem="xJ1-6b-fbb" firstAttribute="trailing" secondItem="llJ-ep-xPl" secondAttribute="trailingMargin" id="f3X-MR-wTm"/>
+                                        <constraint firstItem="Zyq-Jt-Z1k" firstAttribute="top" secondItem="iCB-Zz-Zr9" secondAttribute="bottom" constant="21" id="pxg-Jo-xMX"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
