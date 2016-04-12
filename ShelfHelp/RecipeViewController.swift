@@ -61,7 +61,7 @@ class RecipeViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         
         if let recipeSource = self.recipe?.source{
-            let sourceString = "View at \(recipeSource)"
+            let sourceString = " View at \(recipeSource) "
             self.goToRecipeButton.setTitle(sourceString, forState: .Normal)
         }
         

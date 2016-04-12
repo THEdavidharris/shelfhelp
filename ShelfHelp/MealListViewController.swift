@@ -102,15 +102,15 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MealTableViewCell
         let meal = recipeList[indexPath.row]
         
-        cell.photoImageView.kf_setImageWithURL(NSURL(string: meal.imageURL)!)
+        //cell.photoImageView.kf_setImageWithURL(NSURL(string: meal.imageURL)!)
         cell.mealLabel.text = meal.label
         
-        cell.photoImageView.layer.shadowOffset = CGSizeMake(0, 0)
-        cell.photoImageView.layer.shadowColor = UIColor.blackColor().CGColor
-        cell.photoImageView.layer.shadowRadius = 4
-        cell.photoImageView.layer.shadowOpacity = 0.25
-        cell.photoImageView.layer.masksToBounds = false;
-        cell.photoImageView.clipsToBounds = true;
+//        cell.photoImageView.layer.shadowOffset = CGSizeMake(0, 0)
+//        cell.photoImageView.layer.shadowColor = UIColor.blackColor().CGColor
+//        cell.photoImageView.layer.shadowRadius = 4
+//        cell.photoImageView.layer.shadowOpacity = 0.25
+//        cell.photoImageView.layer.masksToBounds = false;
+//        cell.photoImageView.clipsToBounds = true;
         
         return cell
     }

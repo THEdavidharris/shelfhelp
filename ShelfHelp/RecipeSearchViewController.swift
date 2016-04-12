@@ -134,7 +134,9 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
         
         // Fetches the appropriate recipe
         let recipe = fetchedRecipes[indexPath.row]
+        
         cell.recipeName.text = recipe.label
+        cell.recipeSource.text = recipe.source
         
         cell.recipeImage.kf_setImageWithURL(NSURL(string: recipe.imageURL)!)
         

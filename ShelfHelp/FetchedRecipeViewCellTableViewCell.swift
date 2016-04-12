@@ -13,6 +13,7 @@ class FetchedRecipeViewCellTableViewCell: UITableViewCell {
     // MARK: Properties
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var recipeName: UILabel!
+    @IBOutlet weak var recipeSource: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
