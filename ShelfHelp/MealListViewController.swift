@@ -117,9 +117,20 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete{
-            let recipeVictim = recipeList[indexPath.row]
+            let recipeVictim = recipeList[indexPath.row] as Recipe
             let realm = try! Realm()
-            for item in recipeVictim
+            
+            for item in recipeVictim.ingredientArray {
+                try! realm.write {
+                    realm.delete(item)
+                }
+            }
+            
+            for anotherOne in recipeVictim.staticIngredients {
+                try! realm.write {
+                    realm.delete(anotherOne)
+                }
+            }
             
             try! realm.write {
                 realm.delete(recipeVictim)
