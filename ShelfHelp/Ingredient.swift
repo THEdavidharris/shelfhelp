@@ -28,7 +28,7 @@ class Ingredient: Object, Mappable, Hashable {
     }
     
     override static func primaryKey() -> String? {
-        return "compoundKey"
+        return "text"
     }
     
     required convenience init?(_ map: Map){

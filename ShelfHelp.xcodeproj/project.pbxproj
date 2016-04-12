@@ -261,7 +261,7 @@
 				TargetAttributes = {
 					FF4237AE1C7545A60092E949 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = M4WZCYBG9K;
+						DevelopmentTeam = 6A33B7JFMT;
 					};
 					FF4237C41C7545A60092E949 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -519,7 +519,7 @@
 				INFOPLIST_FILE = ShelfHelp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.ShelfHelpHumza;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ShelfHelpDavid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -535,7 +535,7 @@
 				INFOPLIST_FILE = ShelfHelp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.ShelfHelpHumza;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ShelfHelpDavid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
