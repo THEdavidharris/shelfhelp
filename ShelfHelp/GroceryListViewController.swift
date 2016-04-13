@@ -83,7 +83,9 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
                 noDataLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
                 noDataLabel.textAlignment = NSTextAlignment.Center
                 groceryTable.backgroundView = noDataLabel
+                return self.mealList.count
             }
+            groceryTable.backgroundView = nil
             return self.mealList.count
         }
         else {
@@ -95,7 +97,9 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
                 noDataLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
                 noDataLabel.textAlignment = NSTextAlignment.Center
                 groceryTable.backgroundView = noDataLabel
+                return 0
             }
+            groceryTable.backgroundView = nil
             return 1
         }
     }
