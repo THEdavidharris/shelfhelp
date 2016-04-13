@@ -1065,16 +1065,16 @@
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
 					4C61435A7307FCFCA08F52C95009328A = {
-						DevelopmentTeam = 6A33B7JFMT;
+						DevelopmentTeam = M4WZCYBG9K;
 					};
 					79C040AFDDCE1BCBF6D8B5EB0B85887F = {
-						DevelopmentTeam = 6A33B7JFMT;
+						DevelopmentTeam = M4WZCYBG9K;
 					};
 					C5CBCAA97E951CC882334464FBDF983D = {
-						DevelopmentTeam = 6A33B7JFMT;
+						DevelopmentTeam = M4WZCYBG9K;
 					};
 					F91226101ECE8FCFD221A3EC54481F82 = {
-						DevelopmentTeam = 6A33B7JFMT;
+						DevelopmentTeam = M4WZCYBG9K;
 					};
 				};
 			};

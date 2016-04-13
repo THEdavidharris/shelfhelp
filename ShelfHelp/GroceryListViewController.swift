@@ -18,6 +18,7 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var groceryTable: UITableView!
     @IBOutlet weak var segmentedController: UISegmentedControl!
     
+    
     // MARK: Variables
     var mealList: Results<Recipe>!
     var ingredientList: Results<Ingredient>!
@@ -36,6 +37,8 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
         // Do any additional setup after loading the view, typically from a nib.
         groceryTable.delegate = self
         groceryTable.dataSource = self
+        retrieveElementsAndUpdateUI()
+        groceryTable.tableFooterView = UIView(frame: CGRectZero)
         DeleteAllGroceriesButton.tintColor = UIColor.clearColor()
         DeleteAllGroceriesButton.enabled = false
         
@@ -72,9 +75,27 @@ class GroceryListViewController: UIViewController, UITableViewDelegate, UITableV
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         if self.sectionedTable == true {
+            if self.mealList.count == 0 {
+                let noDataLabel: UILabel = UILabel(frame: CGRectMake(0, 0, groceryTable.bounds.size.width, groceryTable.bounds.size.height))
+                noDataLabel.text = "Visit the search tab to search for recipes and add items to your grocery list"
+                noDataLabel.textColor = UIColor(red: 22.0/255.0, green: 106.0/255.0, blue: 176.0/255.0, alpha: 1.0)
+                noDataLabel.numberOfLines = 0
+                noDataLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+                noDataLabel.textAlignment = NSTextAlignment.Center
+                groceryTable.backgroundView = noDataLabel
+            }
             return self.mealList.count
         }
         else {
+            if self.ingredientList.count == 0 {
+                let noDataLabel: UILabel = UILabel(frame: CGRectMake(0, 0, groceryTable.bounds.size.width - 40, groceryTable.bounds.size.height))
+                noDataLabel.text = "Visit the search tab to search for recipes and add items to your grocery list"
+                noDataLabel.textColor = UIColor(red: 22.0/255.0, green: 106.0/255.0, blue: 176.0/255.0, alpha: 1.0)
+                noDataLabel.numberOfLines = 0
+                noDataLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
+                noDataLabel.textAlignment = NSTextAlignment.Center
+                groceryTable.backgroundView = noDataLabel
+            }
             return 1
         }
     }

@@ -35,6 +35,9 @@ class MealListViewController: UIViewController, UITableViewDelegate, UITableView
         mealTable.delegate = self
         mealTable.dataSource = self
         
+        readRecipesAndUpdateUI()
+        mealTable.tableFooterView = UIView(frame: CGRectZero)
+        
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Lobster 1.4", size: 24)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
     }

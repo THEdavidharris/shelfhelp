@@ -33,6 +33,7 @@ class RecipeSearchViewController: UIViewController, UISearchBarDelegate, UITable
         searchBar.delegate = self
         recipeTable.delegate = self
         recipeTable.dataSource = self
+        recipeTable.tableFooterView = UIView(frame: CGRect.zero)
         
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Lobster 1.4", size: 24)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
 
