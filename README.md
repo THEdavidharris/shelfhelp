@@ -1,5 +1,7 @@
 # shelfhelp
 
+The first iOS app I ever tried writing with a team in undergrad. Might be worth a blog post on common starting out mistakes :)
+
 ## todo
 * Grocery List Screen
   * ~~Sort by meal and alphabetical by ingredient using the segment controller~~
